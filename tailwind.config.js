@@ -9,6 +9,11 @@ module.exports = {
     fontFamily: {
       sans: ['Futura Bk', 'sans-serif'],
       heading: ['Futura Md', 'sans-serif']
+    },
+    extend: {
+      colors: {
+        'background': "#909B93"
+      }
     }
   },
   plugins: [],

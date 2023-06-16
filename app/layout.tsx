@@ -1,26 +1,5 @@
 import "./globals.css";
 import { Raleway } from "next/font/google";
-import localFont from "next/font/local";
-
-const FuturaBk = localFont({
-  src: [
-    {
-      path: "../fonts/FutuBk.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/FuturaBookBT.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/FuturaBoldBT.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-});
 
 const raleway = Raleway({ subsets: ["latin"] });
 
