@@ -15,7 +15,10 @@ const Navbar = () => {
       </ul>
       <div className='flex justify-between ml-[56px] w-[230px]'>
         <Input type='text' icon={SlMagnifier} />
-        <span className='block w-[107px] h-full border border-solid rounded-full'></span>
+        <div className='relative w-[107px] h-full border border-solid rounded-full'>
+          <span className='absolute top-4 left-5 text-white text-lg'>0.00</span>
+          <span className='absolute top-3 right-3'><FiShoppingCart size={24} color='#fff' /></span>
+        </div>
       </div>
     </div>
   );
