@@ -10,8 +10,8 @@ import logo from "../../images/logo.png";
 const Navbar = () => {
   return (
     <div className="max-w-[1400px] m-auto flex justify-between ">
-      <figure className='max-w-[402px] h-[105px] mt-[26px]'>
-        <Image src={logo} alt='Logo' style={{ objectFit: 'cover' }} />
+      <figure className='mt-[26px]'>
+        <Image src={logo} alt='Logo' width={402} height={105} style={{ objectFit: 'cover' }} />
       </figure>
       <div className='h-[54px] flex mt-[54px]'>
         <ul className='flex justify-between w-[541px] ml-[54px] mr-[52px] text-[#fff] uppercase text-[20px]'>
