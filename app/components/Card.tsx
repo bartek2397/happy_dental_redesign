@@ -4,7 +4,7 @@ import { SafeNumber } from "../types";
 interface CardProps {
     width: SafeNumber  | undefined;
     height: SafeNumber | undefined;
-    color: string
+    color?: string
     children: React.ReactNode
 }
 

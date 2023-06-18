@@ -4,14 +4,13 @@ import Link from "next/link";
 
 interface ButtonProps {
   label: string;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
-  color?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, disabled, color }) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, disabled }) => {
   return (
-    <button onClick={onClick} disabled={disabled} color={color} className="uppercase text-[32px]">
+    <button onClick={onClick} disabled={disabled} className={`w-[244px] h-[122px] uppercase text-[32px] rounded-[50px] text-center leading-[122px] font-heading font-semibold `}>
         <Link href='/'>{label}</Link>
     </button>
   );
