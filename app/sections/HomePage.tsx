@@ -8,20 +8,20 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <section className='bg-background w-full h-screen'>
-        <div className='max-w-[1440px] m-auto flex'>
+    <section className='bg-background max-w-full h-screen lg:px-8'>
           <Navbar />
-        </div>
-        <div className='max-w-[1440px] h-[calc(100vh-131px)] m-auto relative'>
-          <div className='absolute bottom-0'>
-            <Image src={background} alt='Background' width={1440} />
-            <div className='absolute top-[10%] left-[8%] tracking-wider text-[96px] font-heading font-bold text-white uppercase'>
+        <div className='max-w-[1440px] m-auto h-[86%] relative'>
+          <div className="absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] lg:w-[60%]">
+            <Image src={background} alt="Background"  />
+          </div>
+            
+            <div className='absolute top-[12%] lg:top-[8%] left-[2%] lg:left-[18%] tracking-wider text-[96px] lg:text-[64px] font-heading font-bold text-white uppercase'>
               <Heading title='Healthy' />
             </div>
-            <div className='absolute top-[10%] right-[12%] tracking-wider text-[96px] font-heading font-bold text-white uppercase'>
+            <div className='absolute top-[12%] lg:top-[8%] right-[10%] lg:right-[24%] tracking-wider text-[96px] lg:text-[64px] font-heading font-bold text-white uppercase'>
               <Heading title='Clean' />
             </div>
-            <div className='absolute top-[30%] w-[361px] left-0 text-white text-right uppercase font-sans font-light text-[40px]'>
+            <div className='absolute top-[30%] lg:left-[15%] w-[361px] lg:w-[240px] text-white text-right uppercase font-sans font-light text-[40px] lg:text-[24px]'>
               <Heading title='Your teeth will feel the difference' />
             </div>
             <div className='absolute bottom-20 right-0 bg-[#E4EEE3] rounded-[50px]'>
@@ -44,7 +44,6 @@ const HomePage = () => {
                 </Link>
               </span>
             </div>
-          </div>
         </div>
       </section>
   )

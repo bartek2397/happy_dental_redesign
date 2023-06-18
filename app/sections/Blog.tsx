@@ -10,7 +10,7 @@ import Button from "../components/Button";
 
 const Blog = () => {
   return (
-    <section className='w-full max-w-[1332px] m-auto'>
+    <section className='w-full max-w-[1332px] m-auto pb-20'>
       <div className='font-semibold text-[40px] py-12 uppercase'>
         <Heading title='Visit our BlogPage' center />
       </div>

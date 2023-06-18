@@ -17,10 +17,10 @@ module.exports = {
       
     },
     screens: {
-      'sm': '640px',
-      'md': '1024px',
-      'lg': '1280px',
-      'xl': '1920px',
+      'sm': {'min': '640px', 'max': '1023px'},
+      'md': {'min': '1024px', 'max': '1279px'},
+      'lg': {'min': '1280px', 'max': '1535px'},
+      'xl': {'min': '1536px'},
     }
   },
   plugins: [],
