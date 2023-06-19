@@ -9,7 +9,7 @@ import logo from "../../../images/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className='max-w-[1400px] m-auto h-[14%] flex justify-between '>
+    <nav className='max-w-[1440px] m-auto h-[14%] flex justify-between '>
       <figure className='mt-[26px]'>
         <Image
           src={logo}
@@ -27,7 +27,7 @@ const Navbar = () => {
           <li>Promocje</li>
         </ul>
       </div>
-      <div className='h-[54px] mt-[54px] flex justify-between ml-[56px] w-[15%]'>
+      <div className='h-[54px] mt-[54px] flex justify-between ml-[56px] w-[17%] lg:w-[30%]'>
         <Input type='text' icon={SlMagnifier} />
         <div className='relative w-[107px] h-full border border-solid rounded-full'>
           <span className='absolute top-4 left-5 text-white text-lg'>0.00</span>

@@ -10,23 +10,27 @@ import woman from '../../images/Woman.png'
 
 const Ranking = () => {
   return (
-    <section className='w-full max-w-[1332px] m-auto lg:px-8'>
+    <section className='max-w-[1440px] max-h-screen m-auto mb-16 lg:px-8'>
       <div className='font-semibold text-[40px] uppercase py-12'>
         <Heading title='Ranking' center />
       </div>
-      <div className="flex justify-between">
-        <Card width={628} height={872} color="C5D8DF">
-          <Image src={toothbrushes} alt="Toothbrushes" width={410} height={550} />
-          <div className="w-[410px] font-sans text-[32px] uppercase py-8 px-24 text-center">
-            <Heading title="Szczoteczek sonicznych" center />
-          </div>
-        </Card>
-        <Card width={628} height={872} color="#C5D8DF">
-          <Image src={woman} alt="Woman" width={410} height={550} />
-          <div className="w-[410px] font-sans text-[32px] uppercase py-8 px-24 text-center">
-            <Heading title="Irygatorów do zębów" center />
-          </div>
-        </Card>
+      <div className="w-full flex justify-between">
+        <div className="">
+          <Card color="#C5D8DF" className="pb-8">
+            <Image src={toothbrushes} alt="Toothbrushes" width={410} height={550} className="" />
+            <div className="w-[410px] lg:w-[279px] font-sans text-[32px] lg:text-[24px] uppercase pt-8 px-24 lg:px-8 text-center">
+              <Heading title="Szczoteczek sonicznych" center />
+            </div>
+          </Card>
+        </div>
+        <div className="">
+          <Card  color="#C5D8DF" className="pb-8">
+            <Image src={woman} alt="Woman" width={410} height={550} />
+            <div className="w-[410px] lg:w-[279px] font-sans text-[32px] lg:text-[24px] uppercase pt-8 px-24 lg:px-12 text-center">
+              <Heading title="Irygatorów do zębów" center />
+            </div>
+          </Card>
+        </div>
       </div>
     </section>
   );
