@@ -11,7 +11,7 @@ const HomePage = () => {
     <section className='bg-background max-w-full h-screen lg:px-8'>
           <Navbar />
         <div className='max-w-[1440px] m-auto h-[86%] relative'>
-          <div className="absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] lg:w-[60%]">
+          <div className="absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] ">
             <Image src={background} alt="Background"  />
           </div>
             
