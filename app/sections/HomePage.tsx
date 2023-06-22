@@ -23,13 +23,13 @@ const HomePage = () => {
                 <Heading title='Clean' />
               </div>
             </div>
-            <div className='absolute top-[30%] lg:left-[15%] w-[361px] lg:w-[240px] text-white text-right uppercase font-sans font-light text-[40px] lg:text-[24px]'>
+            <div className='xl:absolute xl:left-[8%] xl:top-[30%] w-[361px] lg:w-[50%] m-auto lg:text-center text-white text-right uppercase font-sans font-light text-2xl'>
               <Heading title='Your teeth will feel the difference' />
             </div>
-            <div className='absolute bottom-20 right-0 bg-[#E4EEE3] rounded-[50px]'>
+            <div className='absolute bottom-20 md:bottom-[47%] right-0 md:right-[50%] md:translate-x-[50%] bg-[#E4EEE3] rounded-[50px]'>
               <Button label='Buy Now' onClick={() => {}} />
             </div>
-            <div className='flex w-[142px] justify-between absolute bottom-[10%]'>
+            <div className='flex md:flex-col md:justify-center gap-4 absolute bottom-[10%] md:top-[40%] md:-translate-y-[50%]'>
               <span>
                 <Link href='/'>
                   <BsFacebook size={32} color='#fff' />

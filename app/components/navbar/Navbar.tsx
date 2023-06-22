@@ -26,7 +26,7 @@ const Navbar = () => {
         <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color="#fff" />
       </div>
       <div className={` ${isOpen ? 'block bg-[#fff] flex-col w-full h-full' : 'h-[54px] flex xl:gap-2 mt-[54px] lg:hidden'}`}>
-        <ul className='flex lg:flex-col justify-between gap-12 text-[#fff] uppercase text-lg'>
+        <ul className='flex lg:flex-col mx-8 justify-between gap-12 text-[#fff] uppercase text-md'>
           <li>Bestsellery</li>
           <li>Nowości</li>
           <li>Happyset</li>
