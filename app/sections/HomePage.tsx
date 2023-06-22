@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <section className='bg-background max-w-full h-screen lg:px-8'>
+    <section className='bg-background max-w-full h-screen px-4 lg:px-8'>
           <Navbar />
         <div className='max-w-[1440px] m-auto h-[86%] relative'>
           <div className="absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] ">

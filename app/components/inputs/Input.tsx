@@ -5,16 +5,18 @@ import { IconType } from "react-icons";
 interface InputProps {
     type: string,
     icon?: IconType,
-
+    disabled?: boolean
+    value?: string;
 }
 
-const Input: React.FC<InputProps> = ({ type = 'text', icon: Icon }) => {
+const Input: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, value }) => {
   return (
-    <div className="w-[107px] h-full relative bg-transparent border-solid border rounded-full">
+    <div className="w-[107px] h-full relative text-white bg-transparent border-solid border rounded-full">
       <input
-          className='w-[107px] h-full bg-transparent rounded-full'
+          className='w-[107px] h-full bg-transparent rounded-full px-4'
           type={type}
-          
+          disabled={disabled}
+          value={value}
         />
         {Icon && (
             <Icon 
