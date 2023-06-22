@@ -16,7 +16,7 @@ const Ranking = () => {
       </div>
       <div className="w-full flex justify-between">
         <div className="">
-          <Card color="#C5D8DF" className="pb-8">
+          <Card className="pb-8 bg-[#C5D8DF]">
             <Image src={toothbrushes} alt="Toothbrushes" width={410} height={550} className="" />
             <div className="w-[410px] lg:w-[279px] font-sans text-[32px] lg:text-[24px] uppercase pt-8 px-24 lg:px-8 text-center">
               <Heading title="Szczoteczek sonicznych" center />
@@ -24,7 +24,7 @@ const Ranking = () => {
           </Card>
         </div>
         <div className="">
-          <Card  color="#C5D8DF" className="pb-8">
+          <Card className="pb-8 bg-[#C5D8DF]">
             <Image src={woman} alt="Woman" width={410} height={550} />
             <div className="w-[410px] lg:w-[279px] font-sans text-[32px] lg:text-[24px] uppercase pt-8 px-24 lg:px-12 text-center">
               <Heading title="Irygatorów do zębów" center />

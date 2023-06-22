@@ -15,11 +15,13 @@ const HomePage = () => {
             <Image src={background} alt="Background"  />
           </div>
             
-            <div className='absolute top-[12%] lg:top-[8%] left-[2%] lg:left-[18%] tracking-wider text-[96px] lg:text-[64px] font-heading font-bold text-white uppercase'>
-              <Heading title='Healthy' />
-            </div>
-            <div className='absolute top-[12%] lg:top-[8%] right-[10%] lg:right-[24%] tracking-wider text-[96px] lg:text-[64px] font-heading font-bold text-white uppercase'>
-              <Heading title='Clean' />
+            <div className="flex justify-between pl-44 pr-64 pt-20 lg:flex-col lg:justify-center lg:pr-0 lg:pl-0 lg:items-center">
+              <div className=' tracking-wider text-7xl font-heading font-bold text-white uppercase'>
+                <Heading title='Healthy' />
+              </div>
+              <div className=' tracking-wider text-7xl font-heading font-bold text-white uppercase'>
+                <Heading title='Clean' />
+              </div>
             </div>
             <div className='absolute top-[30%] lg:left-[15%] w-[361px] lg:w-[240px] text-white text-right uppercase font-sans font-light text-[40px] lg:text-[24px]'>
               <Heading title='Your teeth will feel the difference' />
