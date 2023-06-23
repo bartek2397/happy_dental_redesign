@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
     <nav className='max-w-[1440px] m-auto h-[14%] flex justify-between '>
-      <figure className='w-[402px] h-full relative'>
+      <figure className='w-[50%] relative'>
         <Image
           src={logo}
           alt='Logo'
@@ -22,18 +22,18 @@ const Navbar = () => {
           className="object-contain"
         />
       </figure>
-      <div className="hidden lg:block mt-[54px]">
+      <div className="block lg:hidden mt-[54px]">
         <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color="#fff" />
       </div>
-      <div className={` ${isOpen ? 'block bg-[#fff] flex-col w-full h-full' : 'h-[54px] flex xl:gap-2 mt-[54px] lg:hidden'}`}>
-        <ul className='flex lg:flex-col mx-8 justify-between gap-12 text-[#fff] uppercase text-md'>
+      <div className={` ${isOpen ? 'block bg-[#333] flex-col w-full h-full' : 'h-[54px] lg:flex xl:gap-2 mt-[54px] hidden'}`}>
+        <ul className='lg:flex flex-col mx-8 justify-between gap-12 text-[#fff] uppercase text-md'>
           <li>Bestsellery</li>
           <li>Nowości</li>
           <li>Happyset</li>
           <li>Promocje</li>
         </ul>
       </div>
-      <div className='my-10 flex justify-between gap-8 lg:hidden'>
+      <div className='my-10 lg:flex justify-between gap-8 hidden'>
         <Input type='text' icon={SlMagnifier} />
         <Input type='text' icon={FiShoppingCart} value="0.00" disabled />
       </div>
