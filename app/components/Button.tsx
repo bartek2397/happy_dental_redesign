@@ -10,7 +10,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, disabled }) => {
   return (
-    <button onClick={onClick} disabled={disabled} className={`w-[200px] lg:w-[244px] h-[122px] uppercase text-xl rounded-[50px] text-center leading-[122px] font-heading font-semibold `}>
+    <button onClick={onClick} disabled={disabled} className={`sm:w-[122px] w-[244px] h-[122px] uppercase text-sm rounded-[50px] text-center leading-[100%] font-heading font-semibold `}>
         <Link href='/'>{label}</Link>
     </button>
   );

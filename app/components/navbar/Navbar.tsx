@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
     <nav className='max-w-[1440px] m-auto h-[14%] flex justify-between '>
-      <figure className='w-[50%] relative'>
+      <figure className='w-[50%] lg:w-[25%] relative'>
         <Image
           src={logo}
           alt='Logo'
@@ -25,8 +25,8 @@ const Navbar = () => {
       <div className="block lg:hidden mt-[54px]">
         <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color="#fff" />
       </div>
-      <div className={` ${isOpen ? 'block bg-[#333] flex-col w-full h-full' : 'h-[54px] lg:flex xl:gap-2 mt-[54px] hidden'}`}>
-        <ul className='lg:flex flex-col mx-8 justify-between gap-12 text-[#fff] uppercase text-md'>
+      <div className={` ${isOpen ? 'block bg-[#333] flex-col w-full h-full' : 'h-[54px] lg:flex mt-[54px] hidden'}`}>
+        <ul className='flex flex-col lg:flex-row mx-8 justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm'>
           <li>Bestsellery</li>
           <li>Nowości</li>
           <li>Happyset</li>
