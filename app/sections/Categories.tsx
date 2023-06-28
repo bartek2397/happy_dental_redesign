@@ -10,7 +10,7 @@ const Categories = () => {
         <Heading title='Categories' center />
       </div>
       <div className=''>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1440px] m-auto'>
+        <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1440px] m-auto'>
           {categories.map((category) => (
             <div className="w-full" key={category.id}>
               <div className='h-[302px] bg-[#BBCBBE] m-0 relative'>
