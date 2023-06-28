@@ -13,7 +13,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
-    <nav className='max-w-[1440px] m-auto h-[14%] flex justify-between '>
+    <nav className='max-w-[1440px] m-auto h-[14%] flex justify-between relative'>
       <figure className='w-[50%] lg:w-[25%] relative'>
         <Image
           src={logo}
@@ -23,16 +23,14 @@ const Navbar = () => {
         />
       </figure>
       <div className="block lg:hidden mt-[54px]">
-        <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color="#fff" />
+        <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color="#fff" rounded />
       </div>
-      <div className={` ${isOpen ? 'block bg-[#333] flex-col w-full h-full' : 'h-[54px] lg:flex mt-[54px] hidden'}`}>
-        <ul className='flex flex-col lg:flex-row mx-8 justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm'>
-          <li>Bestsellery</li>
-          <li>Nowości</li>
-          <li>Happyset</li>
-          <li>Promocje</li>
+        <ul className={`${isOpen ? 'flex bg-[#C5D8DF] flex-col min-w-[100%] h-[100vh] justify-between py-8 items-center' : 'hidden lg:flex lg:flex-row mx-8 my-12 justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm'}`}>
+          <li>Bestsellers</li>
+          <li>New</li>
+          <li>Happy Sets</li>
+          <li>Sales</li>
         </ul>
-      </div>
       <div className='my-10 lg:flex justify-between gap-8 hidden'>
         <Input type='text' icon={SlMagnifier} />
         <Input type='text' icon={FiShoppingCart} value="0.00" disabled />
