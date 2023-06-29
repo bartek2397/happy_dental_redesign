@@ -15,17 +15,17 @@ const Blog = () => {
         <Heading title='Visit our BlogPage' center />
       </div>
       <div className=''>
-        <Card color='#BBCBBE' className="pb-24">
-          <div className='flex justify-between px-12'>
+        <Card color='#BBCBBE' className="p-8">
+          <div className='flex flex-col justify-between gap-12'>
               <Image src={smile} alt='Smile' />
-            <div className='flex flex-col justify-between'>
-              <div className='font-sans text-[36px] w-[408px] h-[146px] uppercase'>
+            <div className='flex flex-col justify-center gap-12'>
+              <div className='font-sans text-xl w-full text-center uppercase'>
                 <Heading
-                  title='Wich products strenghten teeeth and which destroy them?'
+                  title='Wich products strenghten teeth and which destroy them?'
                   center
                 />
               </div>
-              <div className="w-[244px] h-[122px] m-auto mt-[117px] bg-[#E4EEE3] rounded-[50px]">
+              <div className=" m-auto bg-[#E4EEE3] rounded-[50px]">
                 <Button label='Read More' />
               </div>
             </div>
