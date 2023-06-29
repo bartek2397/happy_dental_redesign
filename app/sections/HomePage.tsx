@@ -10,8 +10,8 @@ const HomePage = () => {
   return (
     <section className='bg-background max-w-full h-screen '>
       <Navbar />
-      <div className='max-w-[1440px] m-auto h-[86%] relative -z-1 px-4'>
-        <div className='absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] -z-1 '>
+      <div className='max-w-[1440px] m-auto h-[86%] relative px-4'>
+        <div className='absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] '>
           <Image src={background} alt='Background' />
         </div>
 

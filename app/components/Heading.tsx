@@ -9,7 +9,7 @@ interface HeadingProps {
 const Heading: React.FC<HeadingProps> = ({ title, subtitle, center}) => {
   return (
     <div>
-      <div className={center ? 'text-center' : ''}>
+      <div className={`${center ? 'text-center' : ''} uppercase`}>
         {title}
       </div>
       <div className="font-light mt-2">
