@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Navbar from "../components/navbar/Navbar";
 
 import { Breadcrumbs, Stack, Typography } from "@mui/material";
 import Heading from "../components/Heading";
@@ -18,7 +17,6 @@ const Happysets = () => {
   ];
   return (
     <main className='max-w-full h-screen'>
-      <Navbar />
       <div className='max-w-[1440px] m-auto'>
         <div className="py-6">
           <Stack>
