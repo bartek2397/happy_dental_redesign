@@ -9,6 +9,7 @@ import logo from "../../../images/logo.png";
 
 import { Spin as Hamburger } from 'hamburger-react'
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -24,10 +25,10 @@ const Navbar = () => {
         <Hamburger toggled={isOpen} toggle={setIsOpen} size={36} color={`${isOpen ? '#000' : '#fff'}`} rounded />
       </div>
         <ul className={`w-[25%] h-[25vh] transition ease-linear duration-300 absolute ${isOpen ? 'flex bg-[#C5D8DF] rounded-md flex-col right-0 justify-between py-8  items-center' : 'hidden lg:left-[50%] lg:-translate-x-[50%] lg:top-10 lg:flex -right-50 lg:flex-row  justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm'}`}>
-          <li>Bestsellers</li>
-          <li>New</li>
-          <li>Happysets</li>
-          <li>Sales</li>
+          <Link href='/'>Bestsellers</Link>
+          <Link href='/'>New</Link>
+          <Link href='/happysets'>Happysets</Link>
+          <Link href='/'>Sales</Link>
         </ul>
       <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
         <Input type='text' icon={SlMagnifier} />
@@ -68,10 +69,10 @@ export default Navbar;
 //       </div>
 //       <div className={` ${isOpen ? 'block bg-[#fff] flex-col w-full h-full' : 'h-[54px] flex justify-between mt-[54px] lg:hidden'}`}>
 //         <ul className='flex lg:flex-col justify-between gap-8 ml-[54px] mr-[52px] text-[#fff] uppercase text-[20px] lg:text-[16px]'>
-//           <li>Bestsellery</li>
-//           <li>Nowości</li>
-//           <li>Happyset</li>
-//           <li>Promocje</li>
+//           <Link>Bestsellery</Link>
+//           <Link>Nowości</Link>
+//           <Link>Happyset</Link>
+//           <Link>Promocje</Link>
 //         </ul>
 //       <div className='flex justify-between gap-8 lg:hidden'>
 //         <Input type='text' icon={SlMagnifier} />
