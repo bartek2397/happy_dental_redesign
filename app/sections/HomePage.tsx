@@ -8,17 +8,17 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <section className='bg-background max-w-full h-screen '>
-      <div className='max-w-[1440px] m-auto h-[86%] relative px-4'>
-        <div className='absolute bottom-0 right-[50%] translate-x-[50%] w-[80%] '>
+    <section className='bg-background max-w-full h-[86vh]'>
+      <div className='max-w-[1440px] m-auto h-full relative px-4'>
+        <div className='absolute bottom-[0%] right-[50%] translate-x-[50%] w-[80%] '>
           <Image src={background} alt='Background' />
         </div>
 
         <div className='max-w-[1332px] flex flex-col lg:flex-row gap-4 xl:gap-64 justify-center items-center pt-[20%] md:pt-[3%] '>
-          <div className=' tracking-wider text-7xl font-heading font-bold text-white uppercase'>
+          <div className='tracking-wider text-7xl font-heading font-bold text-white uppercase'>
             <Heading title='Healthy' />
           </div>
-          <div className=' tracking-wider text-7xl font-heading font-bold text-white uppercase'>
+          <div className='tracking-wider text-7xl font-heading font-bold text-white uppercase'>
             <Heading title='Clean' />
           </div>
         </div>

@@ -13,9 +13,22 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const menuOpen = (
+      <div className='w-[100vw] h-screen bg-[#C5D8DF]'>
+        <ul className="flex flex-col">
+          <li>
+            <Link href='/'>Bestsellers</Link>
+          </li>
+        </ul>
+      </div>
+  );
+
+  const toggleHandler = () => {
+    return isOpen ? menuOpen : null;
+  };
   return (
-    
-    <div className="w-full bg-background h-[14vh]">
+    <div className='w-full bg-background h-[14vh]'>
       <nav className='max-w-[1440px] m-auto h-full flex justify-between relative '>
         <Image
           src={logo}
@@ -23,25 +36,26 @@ const Navbar = () => {
           fill
           className='object-contain max-w-[50%] lg:max-w-[25%]'
         />
-        <div className='block lg:hidden mt-[54px] fixed right-0 -top-10 z-20'>
+        <div className='block lg:hidden mt-[54px] fixed right-0 -top-10 z-50'>
           <Hamburger
             toggled={isOpen}
             toggle={setIsOpen}
+            onToggle={toggleHandler}
             size={36}
             color={`${isOpen ? "#000" : "#fff"}`}
             rounded
           />
         </div>
         <ul
-          className={`w-[25%] h-[25vh] transition ease-linear duration-300 absolute ${
+          className={`w-[100%] h-[100vh] fixed z-30 ${
             isOpen
               ? "flex bg-[#C5D8DF] rounded-md flex-col right-0 justify-between py-8  items-center"
               : "hidden lg:left-[50%] lg:-translate-x-[50%] lg:top-10 lg:flex -right-50 lg:flex-row  justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm"
           }`}>
-          <Link href='/'>Bestsellers</Link>
-          <Link href='/'>New</Link>
-          <Link href='/happysets'>Happysets</Link>
-          <Link href='/'>Sales</Link>
+          <Link className="h-[25%] w-[75%] text-center leading-[220px] border-t border-solid border-1px border-black" href='/'>Bestsellers</Link>
+          <Link className="h-[25%] w-full text-center leading-[220px] border-t border-solid border-1px border-black" href='/'>New</Link>
+          <Link className="h-[25%] w-full text-center leading-[220px] border-t border-solid border-1px border-black" href='/happysets'>Happysets</Link>
+          <Link className="h-[25%] w-full text-center leading-[220px] border-y border-solid border-1px border-black" href='/'>Sales</Link>
         </ul>
         <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
           <Input type='text' icon={SlMagnifier} />
