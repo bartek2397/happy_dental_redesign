@@ -4,7 +4,6 @@ import Categories from "./sections/Categories";
 import Ranking from "./sections/Ranking";
 import HomePage from "./sections/HomePage";
 import Blog from "./sections/Blog";
-import Footer from "./sections/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <Categories />
       <Ranking />
       <Blog />
-      <Footer />
     </main>
   );
 }

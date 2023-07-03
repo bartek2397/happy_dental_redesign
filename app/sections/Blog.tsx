@@ -10,14 +10,14 @@ import Button from "../components/Button";
 
 const Blog = () => {
   return (
-    <section className='w-full max-w-[1440px] m-auto pb-20'>
+    <section className='max-w-[1440px] m-auto pb-20'>
       <div className='font-semibold text-[40px] py-12 uppercase'>
         <Heading title='Visit our BlogPage' center />
       </div>
-      <div className=''>
+      <div className='px-12'>
         <Card color='#BBCBBE' className="p-8">
-          <div className='flex flex-col justify-between gap-12'>
-              <Image src={smile} alt='Smile' />
+          <div className='flex flex-col items-center lg:flex-row justify-between gap-12'>
+              <Image src={smile} alt='Smile' className="" />
             <div className='flex flex-col justify-center gap-12'>
               <div className='font-sans text-xl w-full text-center uppercase'>
                 <Heading

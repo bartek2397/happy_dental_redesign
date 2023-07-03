@@ -11,7 +11,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ width, height, color, children, className }) => {
   return (
-    <div className={`w-[${width}] h-[${height}] bg-[${color}] rounded-[80px] px-24 pt-24 ${className}`}>
+    <div className={`w-[${width}] h-[${height}] bg-[${color}] rounded-[80px] px-24 py-12 ${className}`}>
       {children}
     </div>
   )

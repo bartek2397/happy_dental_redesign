@@ -14,23 +14,19 @@ const Ranking = () => {
       <div className='font-semibold text-[40px] uppercase py-12'>
         <Heading title='Ranking' center />
       </div>
-      <div className="w-full flex flex-wrap justify-center gap-12">
-        <div className="">
-          <Card className="w-full text-center bg-[#C5D8DF]">
-            <Image src={toothbrushes} alt="Toothbrushes" className="p-8 lg:p-0" />
-            <div className="w-[410px] font-sans text-[24px] lg:text-[32px] uppercase pb-4 lg:py-8 px-24  text-center">
+      <div className="flex flex-wrap px-12 justify-center gap-12">
+          <Card className=" flex flex-col items-center bg-[#C5D8DF] "> 
+            <Image src={toothbrushes} alt="Toothbrushes" className="flex" />
+            <div className="font-sans text-md pt-4">
               <Heading title="Szczoteczek sonicznych" center />
             </div>
           </Card>
-        </div>
-        <div className="">
-          <Card className="w-full bg-[#C5D8DF]">
-            <Image src={woman} alt="Woman" width={410} height={550} className="p-8 lg:p-0" />
-            <div className="w-[410px] font-sans text-[24px] lg:text-[32px] uppercase pb-4 lg:py-8 px-24  text-center">
+          <Card className="flex flex-col items-center bg-[#C5D8DF] p-8">
+            <Image src={woman} alt="Woman" />
+            <div className="font-sans text-md pt-4">
               <Heading title="Irygatorów do zębów" center />
             </div>
           </Card>
-        </div>
       </div>
     </section>
   );
