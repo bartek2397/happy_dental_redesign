@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <section className='bg-background max-w-full h-[86vh]'>
+    <section id="home" className='bg-background max-w-full h-[86vh]'>
       <div className='max-w-[1440px] m-auto h-full relative px-4'>
         <div className='absolute bottom-[0%] right-[50%] translate-x-[50%] w-[80%] '>
           <Image src={background} alt='Background' />

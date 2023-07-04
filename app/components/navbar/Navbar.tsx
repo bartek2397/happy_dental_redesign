@@ -14,19 +14,63 @@ import Link from "next/link";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const menuOpen = (
-      <div className='w-[100vw] h-screen bg-[#C5D8DF]'>
-        <ul className="flex flex-col">
-          <li>
-            <Link href='/'>Bestsellers</Link>
-          </li>
-        </ul>
-      </div>
-  );
+const Menu = () => {
+    
+  return (
+    <ul
+      className={`fixed z-30   ${
+        isOpen
+          ? "w-full h-[50vh] flex bg-[#C5D8DF] rounded-md flex-col right-0 justify-between items-center animate-slideIn"
+          : "absolute w-full h-[50vh] flex bg-[#C5D8DF] rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
+      }`}>
+      <Link
+        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
+          isOpen
+            ? ""
+            : ""
+        } `}
+        href='/'
+        onClick={() => setIsOpen(false)}>
+        Bestsellers
+      </Link>
+      <Link
+        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
+          isOpen
+            ? ""
+            : ""
+        } `}
+        href='/'
+        onClick={() => setIsOpen(false)}>
+        New
+      </Link>
+      <Link
+        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
+          isOpen
+            ? ""
+            : ""
+        } `}
+        href='/happysets'
+        onClick={() => setIsOpen(false)}>
+        Happysets
+      </Link>
+      <Link
+        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
+          isOpen
+            ? ""
+            : ""
+        } `}
+        href='/'
+        onClick={() => setIsOpen(false)}>
+        Sales
+      </Link>
+    </ul>
+  ) 
+};
 
-  const toggleHandler = () => {
-    return isOpen ? menuOpen : null;
+  const handleToggle = () => {
+    return isOpen ? Menu : null;
   };
+
   return (
     <div className='w-full bg-background h-[14vh]'>
       <nav className='max-w-[1440px] m-auto h-full flex justify-between relative '>
@@ -36,27 +80,17 @@ const Navbar = () => {
           fill
           className='object-contain max-w-[50%] lg:max-w-[25%]'
         />
-        <div className='block lg:hidden mt-[54px] fixed right-0 -top-10 z-50'>
+        <div className='block lg:hidden fixed right-5 top-[4%] z-50'>
           <Hamburger
             toggled={isOpen}
             toggle={setIsOpen}
-            onToggle={toggleHandler}
+            onToggle={handleToggle}
             size={36}
             color={`${isOpen ? "#000" : "#fff"}`}
             rounded
           />
         </div>
-        <ul
-          className={`w-[100%] h-[100vh] fixed z-30 ${
-            isOpen
-              ? "flex bg-[#C5D8DF] rounded-md flex-col right-0 justify-between py-8  items-center"
-              : "hidden lg:left-[50%] lg:-translate-x-[50%] lg:top-10 lg:flex -right-50 lg:flex-row  justify-between gap-4 xl:gap-20 text-[#fff] uppercase text-sm"
-          }`}>
-          <Link className="h-[25%] w-[75%] text-center leading-[220px] border-t border-solid border-1px border-black" href='/'>Bestsellers</Link>
-          <Link className="h-[25%] w-full text-center leading-[220px] border-t border-solid border-1px border-black" href='/'>New</Link>
-          <Link className="h-[25%] w-full text-center leading-[220px] border-t border-solid border-1px border-black" href='/happysets'>Happysets</Link>
-          <Link className="h-[25%] w-full text-center leading-[220px] border-y border-solid border-1px border-black" href='/'>Sales</Link>
-        </ul>
+        <Menu />
         <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
           <Input type='text' icon={SlMagnifier} />
           <Input type='text' icon={FiShoppingCart} value='0.00' disabled />

@@ -22,6 +22,20 @@ module.exports = {
       'lg': {'min': '1024px'},
       'md': {'min': '768px'},
       'sm': {'min': '640px'},
+    },
+    keyframes: {
+      slideIn: {
+        '0%': {right: '-100%'},
+        '100%': {right: '0%'}
+      },
+      slideOut: {
+        '0%': {right: '0%'},
+        '100%': {right: '-100%'}
+      }
+    },
+    animation: {
+      slideIn: 'slideIn ease-in-out 300ms',
+      slideOut: 'slideOut ease-in-out 300ms'
     }
   },
   plugins: [
