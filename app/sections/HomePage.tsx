@@ -25,9 +25,8 @@ const HomePage = () => {
         <div className='w-[361px] mx-auto pt-4 text-white text-center uppercase font-sans font-light text-2xl xl:mx-32 xl:text-right'>
           <Heading title='Your teeth will feel the difference' />
         </div>
-        <div className='absolute right-[50%] sm:bottom-10 sm:right-5 translate-x-[50%] sm:translate-x-0 mt-[10%] bg-[#E4EEE3] rounded-[50px]'>
-          <Button label='Buy Now' onClick={() => {}} />
-        </div>
+        
+          <Button className="absolute p-8 right-[50%] sm:bottom-10 sm:right-5 translate-x-[50%] sm:translate-x-0 mt-[10%] bg-[#E4EEE3] text-lg" label='Buy Now'/>
         <div className='flex flex-col md:flex-row justify-center gap-4 absolute md:top-[90%] top-[40%] -translate-y-[50%]'>
           <span>
             <Link href='/'>

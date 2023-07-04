@@ -10,62 +10,73 @@ import logo from "../../../images/logo.png";
 import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import Link from "next/link";
+import Button from "../Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-const Menu = () => {
-    
-  return (
-    <ul
-      className={`fixed z-30   ${
-        isOpen
-          ? "w-full h-[50vh] flex bg-[#C5D8DF] rounded-md flex-col right-0 justify-between items-center animate-slideIn"
-          : "absolute w-full h-[50vh] flex bg-[#C5D8DF] rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
-      }`}>
-      <Link
-        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-none lg:text-white ${
-          isOpen
-            ? ""
-            : ""
-        } `}
-        href='/'
-        onClick={() => setIsOpen(false)}>
-        Bestsellers
-      </Link>
-      <Link
-        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
-          isOpen
-            ? ""
-            : ""
-        } `}
-        href='/'
-        onClick={() => setIsOpen(false)}>
-        New
-      </Link>
-      <Link
-        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
-          isOpen
-            ? ""
-            : ""
-        } `}
-        href='/happysets'
-        onClick={() => setIsOpen(false)}>
-        Happysets
-      </Link>
-      <Link
-        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
-          isOpen
-            ? ""
-            : ""
-        } `}
-        href='/'
-        onClick={() => setIsOpen(false)}>
-        Sales
-      </Link>
-    </ul>
-  ) 
-};
+  const Menu = () => {
+    return (
+      <>
+        <ul
+          className={`fixed z-30   ${
+            isOpen
+              ? "w-[50vw] h-[100vh] flex backdrop-blur-lg rounded-md flex-col right-0 items-center animate-slideIn"
+              : "absolute w-[50vw] h-[100vh] flex backdrop-blur-lg rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
+          }`}
+        >
+        <div className={`${isOpen ? 'flex gap-4 pt-24' : 'flex gap-4 pt-24 animate-slideOut'}  `}>
+          <Button
+            className='font-normal px-8 py-2 text-sm'
+            color='#E4EEE3'
+            label='Sign In'
+          />
+          <Button
+            className='font-normal px-8 py-2 text-sm'
+            color='#E4EEE3'
+            label='Sign Up'
+          />
+        </div>
+          <Link
+            className={`h-[10%] w-[75%] text-center text-white leading-[10vh]  ${
+              isOpen ? "" : ""
+            } `}
+            href='/'
+            onClick={() => setIsOpen(false)}
+          >
+            Bestsellers
+          </Link>
+          <Link
+            className={`h-[10%] w-[75%] text-center leading-[10vh]   lg:text-white ${
+              isOpen ? "" : ""
+            } `}
+            href='/'
+            onClick={() => setIsOpen(false)}
+          >
+            New
+          </Link>
+          <Link
+            className={`h-[10%] w-[75%] text-center leading-[10vh]  lg:text-white ${
+              isOpen ? "" : ""
+            } `}
+            href='/happysets'
+            onClick={() => setIsOpen(false)}
+          >
+            Happysets
+          </Link>
+          <Link
+            className={`h-[10%] w-[75%] text-center leading-[10vh] lg:text-white ${
+              isOpen ? "" : ""
+            } `}
+            href='/'
+            onClick={() => setIsOpen(false)}
+          >
+            Sales
+          </Link>
+        </ul>
+      </>
+    );
+  };
 
   const handleToggle = () => {
     return isOpen ? Menu : null;
