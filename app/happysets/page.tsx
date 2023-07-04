@@ -16,7 +16,7 @@ const Happysets = () => {
     </Typography>,
   ];
   return (
-    <main className='max-w-full h-screen'>
+    <main className='max-w-full h-screen px-4'>
       <div className='max-w-[1440px] m-auto'>
         <div className="py-6">
           <Stack>

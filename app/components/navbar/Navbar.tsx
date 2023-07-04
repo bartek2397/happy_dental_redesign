@@ -72,14 +72,16 @@ const Menu = () => {
   };
 
   return (
-    <div className='w-full bg-background h-[14vh]'>
+    <div className='w-full bg-background h-[14vh] '>
       <nav className='max-w-[1440px] m-auto h-full flex justify-between relative '>
-        <Image
-          src={logo}
-          alt='Logo'
-          fill
-          className='object-contain max-w-[50%] lg:max-w-[25%]'
-        />
+        <Link href='/'>
+          <Image
+            src={logo}
+            alt='Logo'
+            fill
+            className='object-contain max-w-[40%] lg:max-w-[25%]'
+          />
+        </Link>
         <div className='block lg:hidden fixed right-5 top-[4%] z-50'>
           <Hamburger
             toggled={isOpen}
