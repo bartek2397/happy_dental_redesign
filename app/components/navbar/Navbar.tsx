@@ -24,7 +24,7 @@ const Menu = () => {
           : "absolute w-full h-[50vh] flex bg-[#C5D8DF] rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
       }`}>
       <Link
-        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-t border-solid border-1px border-black lg:border-none lg:text-white ${
+        className={`h-[25%] w-[75%] text-center leading-[12.5vh] border-none lg:text-white ${
           isOpen
             ? ""
             : ""
