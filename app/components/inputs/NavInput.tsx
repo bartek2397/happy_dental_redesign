@@ -9,7 +9,7 @@ interface InputProps {
     value?: string;
 }
 
-const Input: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, value }) => {
+const NavInput: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, value }) => {
   return (
     <div className="w-[107px] h-full relative text-white bg-transparent border-solid border rounded-full">
       <input
@@ -29,4 +29,4 @@ const Input: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, valu
   )
 };
 
-export default Input;
+export default NavInput;

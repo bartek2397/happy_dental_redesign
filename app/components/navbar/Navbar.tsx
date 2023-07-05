@@ -2,7 +2,7 @@
 
 import { FiShoppingCart } from "react-icons/fi";
 import { SlMagnifier } from "react-icons/sl";
-import Input from "../inputs/Input";
+import Input from "../inputs/NavInput";
 
 import Image from "next/image";
 import logo from "../../../images/logo.png";
@@ -11,6 +11,7 @@ import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import Link from "next/link";
 import Button from "../Button";
+import NavInput from "../inputs/NavInput";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,33 +23,33 @@ const Navbar = () => {
           className={`fixed z-30   ${
             isOpen
               ? "w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-sm rounded-md flex-col right-0 items-center animate-slideIn"
-              : "absolute w-[50vw] h-[100vh] flex backdrop-blur-lg rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
-          }`}
-        >
+              : "absolute w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-lg rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
+          }`}>
           <div
             className={`${
-              isOpen ? "flex gap-4 py-24" : "flex gap-4 pt-24 animate-slideOut"
-            }  `}
-          >
+              isOpen ? "flex gap-4 py-24" : "flex gap-4 py-24 animate-slideOut"
+            }  `}>
             <Button
               className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
               color='#E4EEE3'
               label='Sign In'
+              link='/sign-in'
+              onClick={() => setIsOpen(false)}
             />
-              <Button
-                className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
-                color='#E4EEE3'
-                label='Sign Up'
-                route='/sign-up'
-              />
+            <Button
+              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
+              color='#E4EEE3'
+              label='Sign Up'
+              link='/sign-up'
+              onClick={() => setIsOpen(false)}
+            />
           </div>
           <Link
             className={`h-[10%] w-full text-center leading-[10vh] uppercase hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
               isOpen ? "" : ""
             } `}
             href='/'
-            onClick={() => setIsOpen(false)}
-          >
+            onClick={() => setIsOpen(false)}>
             Bestsellers
           </Link>
           <Link
@@ -56,8 +57,7 @@ const Navbar = () => {
               isOpen ? "" : ""
             } `}
             href='/'
-            onClick={() => setIsOpen(false)}
-          >
+            onClick={() => setIsOpen(false)}>
             New
           </Link>
           <Link
@@ -65,8 +65,7 @@ const Navbar = () => {
               isOpen ? "" : ""
             } `}
             href='/happysets'
-            onClick={() => setIsOpen(false)}
-          >
+            onClick={() => setIsOpen(false)}>
             Happysets
           </Link>
           <Link
@@ -74,8 +73,7 @@ const Navbar = () => {
               isOpen ? "" : ""
             } `}
             href='/'
-            onClick={() => setIsOpen(false)}
-          >
+            onClick={() => setIsOpen(false)}>
             Sales
           </Link>
         </ul>
@@ -109,18 +107,18 @@ const Navbar = () => {
           />
         </div>
         <Menu />
-        <div className="hidden lg:flex flex-col">
-          <div className="flex gap-20 items-center mx-8 mt-2 text-white ">
-            <p className="hover:underline">
+        <div className='hidden lg:flex flex-col'>
+          <div className='flex gap-20 items-center mx-8 mt-2 text-white '>
+            <p className='hover:underline'>
               <Link href='/'>Sign in</Link>
             </p>
-            <p className="hover:underline">
+            <p className='hover:underline'>
               <Link href='/'>Sign Up</Link>
             </p>
           </div>
           <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
-            <Input type='text' icon={SlMagnifier} />
-            <Input type='text' icon={FiShoppingCart} value='0.00' disabled />
+            <NavInput type='text' icon={SlMagnifier} />
+            <NavInput type='text' icon={FiShoppingCart} value='0.00' disabled />
           </div>
         </div>
       </nav>

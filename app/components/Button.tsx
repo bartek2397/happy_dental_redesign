@@ -8,7 +8,7 @@ interface ButtonProps {
   disabled?: boolean;
   color?: string;
   className?: string;
-  route?: string
+  link?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   color,
   className,
-  route
+  link
 }) => {
   return (
     <button
@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
         className ?? ""
       }`}
     >
-      <Link href={`${route}`}>{label}</Link>
+      <Link href={`${link}`}>{label}</Link>
     </button>
   );
 };
