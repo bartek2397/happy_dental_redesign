@@ -21,24 +21,29 @@ const Navbar = () => {
         <ul
           className={`fixed z-30   ${
             isOpen
-              ? "w-[50vw] h-[100vh] flex backdrop-blur-lg rounded-md flex-col right-0 items-center animate-slideIn"
+              ? "w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-sm rounded-md flex-col right-0 items-center animate-slideIn"
               : "absolute w-[50vw] h-[100vh] flex backdrop-blur-lg rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
           }`}
         >
-        <div className={`${isOpen ? 'flex gap-4 pt-24' : 'flex gap-4 pt-24 animate-slideOut'}  `}>
-          <Button
-            className='font-normal px-8 py-2 text-sm'
-            color='#E4EEE3'
-            label='Sign In'
-          />
-          <Button
-            className='font-normal px-8 py-2 text-sm'
-            color='#E4EEE3'
-            label='Sign Up'
-          />
-        </div>
+          <div
+            className={`${
+              isOpen ? "flex gap-4 py-24" : "flex gap-4 pt-24 animate-slideOut"
+            }  `}
+          >
+            <Button
+              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
+              color='#E4EEE3'
+              label='Sign In'
+            />
+              <Button
+                className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
+                color='#E4EEE3'
+                label='Sign Up'
+                route='/sign-up'
+              />
+          </div>
           <Link
-            className={`h-[10%] w-[75%] text-center text-white leading-[10vh]  ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
               isOpen ? "" : ""
             } `}
             href='/'
@@ -47,7 +52,7 @@ const Navbar = () => {
             Bestsellers
           </Link>
           <Link
-            className={`h-[10%] w-[75%] text-center leading-[10vh]   lg:text-white ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/'
@@ -56,7 +61,7 @@ const Navbar = () => {
             New
           </Link>
           <Link
-            className={`h-[10%] w-[75%] text-center leading-[10vh]  lg:text-white ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/happysets'
@@ -65,7 +70,7 @@ const Navbar = () => {
             Happysets
           </Link>
           <Link
-            className={`h-[10%] w-[75%] text-center leading-[10vh] lg:text-white ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/'
@@ -104,9 +109,19 @@ const Navbar = () => {
           />
         </div>
         <Menu />
-        <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
-          <Input type='text' icon={SlMagnifier} />
-          <Input type='text' icon={FiShoppingCart} value='0.00' disabled />
+        <div className="hidden lg:flex flex-col">
+          <div className="flex gap-20 items-center mx-8 mt-2 text-white ">
+            <p className="hover:underline">
+              <Link href='/'>Sign in</Link>
+            </p>
+            <p className="hover:underline">
+              <Link href='/'>Sign Up</Link>
+            </p>
+          </div>
+          <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
+            <Input type='text' icon={SlMagnifier} />
+            <Input type='text' icon={FiShoppingCart} value='0.00' disabled />
+          </div>
         </div>
       </nav>
     </div>

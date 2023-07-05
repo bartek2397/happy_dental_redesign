@@ -26,20 +26,20 @@ const HomePage = () => {
           <Heading title='Your teeth will feel the difference' />
         </div>
         
-          <Button className="absolute p-8 right-[50%] sm:bottom-10 sm:right-5 translate-x-[50%] sm:translate-x-0 mt-[10%] bg-[#E4EEE3] text-lg" label='Buy Now'/>
+          <Button className="absolute p-8 right-[50%] sm:bottom-10 sm:right-5 translate-x-[50%] sm:translate-x-0 mt-[10%] bg-[#E4EEE3] text-lg hover:bg-[#C5D8DF] transition" label='Buy Now'/>
         <div className='flex flex-col md:flex-row justify-center gap-4 absolute md:top-[90%] top-[40%] -translate-y-[50%]'>
           <span>
-            <Link href='/'>
+            <Link href='/' className="hover:opacity-[0.5]">
               <BsFacebook size={32} color='#fff' />
             </Link>
           </span>
           <span>
-            <Link href='/'>
+            <Link href='/' className="hover:opacity-[0.5]" >
               <BsInstagram size={32} color='#fff' />
             </Link>
           </span>
           <span>
-            <Link href='/'>
+            <Link href='/' className="hover:opacity-[0.5]">
               <BsYoutube size={32} color='#fff' />
             </Link>
           </span>
