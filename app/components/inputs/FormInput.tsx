@@ -29,7 +29,7 @@ const FormInput: React.FC<FormInputProps> = ({
       type={type}
       placeholder={placeholder}
       {...register(id, { required })}
-      className={`border border-solid-1px border-gray-300 ${className ?? ""} ${
+      className={`border border-solid-1px border-gray-300 p-2 ${className ?? ""} ${
         errors[id] ? "border-rose-500" : "border-gray-300"
       }`}
     />
