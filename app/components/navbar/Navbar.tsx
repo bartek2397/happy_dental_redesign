@@ -2,7 +2,6 @@
 
 import { FiShoppingCart } from "react-icons/fi";
 import { SlMagnifier } from "react-icons/sl";
-import Input from "../inputs/NavInput";
 
 import Image from "next/image";
 import logo from "../../../images/logo.png";
@@ -13,6 +12,7 @@ import Link from "next/link";
 import Button from "../Button";
 import NavInput from "../inputs/NavInput";
 import { SafeUser } from "@/app/types";
+import UserMenu from "./UserMenu";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -33,22 +33,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           <div
             className={`${
               isOpen ? "flex gap-4 py-24" : "flex gap-4 py-24 animate-slideOut"
-            }  `}>
+            } ${currentUser ? 'hidden' : ''} `}>
             <Button
-              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
+              className={`font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden`}
               color='#E4EEE3'
               label='Sign In'
               link='/sign-in'
               onClick={() => setIsOpen(false)}
             />
             <Button
-              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden'
+              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden '
               color='#E4EEE3'
               label='Sign Up'
               link='/sign-up'
               onClick={() => setIsOpen(false)}
             />
           </div>
+          <UserMenu currentUser={currentUser}/>
           <Link
             className={`h-[10%] w-full text-center leading-[10vh] uppercase hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
               isOpen ? "" : ""
@@ -115,10 +116,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         <div className='hidden lg:flex flex-col'>
           <div className='flex gap-20 items-center mx-8 mt-2 text-white '>
             <p className='hover:underline'>
-              <Link href='/'>Sign in</Link>
+              <Link href='/sign-in'>Sign in</Link>
             </p>
             <p className='hover:underline'>
-              <Link href='/'>Sign Up</Link>
+              <Link href='/sign-up'>Sign Up</Link>
             </p>
           </div>
           <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>

@@ -8,6 +8,7 @@ import { BsGoogle } from 'react-icons/bs'
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 
 
@@ -30,8 +31,12 @@ const SignUp = () => {
   })
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    axios.post('/api/register', data).then(() => {
+    axios.post('/api/register', data)
+    .then(() => {
+      toast.success('Registered!')
       router.push('/')
+    }).catch((error) => {
+      toast.error(error)
     })
   } 
   return (
