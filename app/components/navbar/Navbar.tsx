@@ -8,12 +8,17 @@ import Image from "next/image";
 import logo from "../../../images/logo.png";
 
 import { Spin as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Button from "../Button";
 import NavInput from "../inputs/NavInput";
+import { SafeUser } from "@/app/types";
 
-const Navbar = () => {
+interface NavbarProps {
+  currentUser?: SafeUser | null;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const Menu = () => {
