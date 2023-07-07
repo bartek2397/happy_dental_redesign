@@ -7,10 +7,14 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form'
 import { BsGoogle } from 'react-icons/bs'
 
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 
 
 const SignUp = () => {
+
+  const router = useRouter()
+
   const {
     register,
     handleSubmit,
@@ -27,7 +31,7 @@ const SignUp = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     axios.post('/api/register', data).then(() => {
-      
+      router.push('/')
     })
   } 
   return (

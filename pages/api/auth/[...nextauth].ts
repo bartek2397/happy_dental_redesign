@@ -2,21 +2,16 @@ import bcrypt from 'bcrypt'
 import NextAuth from "next-auth";
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from "next-auth/providers/credentials";
-import type { NextAuthOptions } from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-
-import type { Adapter } from "next-auth/adapters";
-
+import type { AuthOptions } from "next-auth";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient()
 
-function MyAdapter(): Adapter {
-    return PrismaClient(prisma)
-}
 
-export const authOptions: NextAuthOptions = {
-    adapter: MyAdapter(),
+
+export const authOptions: AuthOptions = {
+    adapter: PrismaAdapter(prisma),
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_ID as string,
