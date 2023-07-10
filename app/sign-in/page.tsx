@@ -34,7 +34,7 @@ const SignIn = () => {
             redirect: false
         }).then((callback) => {
             if (callback?.ok) {
-                toast.success('You are logged')
+                toast.success('Logged in!')
                 router.push('/')
             }
             if (callback?.error) {

@@ -3,6 +3,7 @@ import { Raleway } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./sections/Footer";
 import ToasterProvider from "./components/providers/ToasterProvider";
+import getCurrentUser from "./actions/getCurrentUser";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -11,16 +12,18 @@ export const metadata = {
   description: "Artykuły do higieny jamy ustnej",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser = await getCurrentUser()
+
   return (
     <html lang='en'>
       <body className={raleway.className}>
         <ToasterProvider />
-        <Navbar />
+        <Navbar currentUser={currentUser} />
         {children}
         <Footer />
       </body>
