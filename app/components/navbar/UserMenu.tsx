@@ -23,16 +23,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, []);
 
   return (
-    <div className='relative'>
-      <div>
-        <div onClick={toggleOpen} className="flex text-md font-semibold cursor-pointer">
-          Hello {currentUser?.email} <IoIosArrowDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+    <div onClick={toggleOpen} className='relative bg-[#E4EEE3] px-6 py-2 rounded-xl'>
+        <div className="flex text-md font-semibold cursor-pointer relative ">
+          Hello {currentUser?.email} <IoIosArrowDown className={`transition absolute top-1 right-0 translate-x-[150%] ${isOpen ? 'rotate-180' : ''}`} />
         </div>
-      </div>
       <div>
         {isOpen && (
-          <div className="absolute rounded-xl ">
-            <div className="flex flex-col cursor-pointer">
+          <div className={`w-full absolute rounded-b-md bg-[#E4EEE3] left-0 text-center transition ${isOpen ? 'animate-dropdown' : 'animate-goUp'} `}>
+            <div className={`flex flex-col cursor-pointer `}>
             {currentUser ? (
               <>
                 <MenuItem 

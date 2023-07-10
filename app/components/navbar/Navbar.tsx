@@ -28,28 +28,31 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           className={`fixed z-30   ${
             isOpen
               ? "w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-sm rounded-md flex-col right-0 items-center animate-slideIn"
-              : "absolute w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-lg rounded-md flex-col right-[-100%] overflow-hidden items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
+              : "absolute w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-lg rounded-md flex-col right-[-100%] items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
           }`}>
-          <div
-            className={`${
-              isOpen ? "flex gap-4 py-24" : "flex gap-4 py-24 animate-slideOut"
-            } ${currentUser ? 'hidden' : ''} `}>
-            <Button
-              className={`font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden`}
-              color='#E4EEE3'
-              label='Sign In'
-              link='/sign-in'
-              onClick={() => setIsOpen(false)}
-            />
-            <Button
-              className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden '
-              color='#E4EEE3'
-              label='Sign Up'
-              link='/sign-up'
-              onClick={() => setIsOpen(false)}
-            />
+          <div className={`${isOpen ? 'py-24' : 'py-24'}`}>
+            {currentUser ? (
+              <UserMenu currentUser={currentUser} />
+            ) : (
+              <div>
+                <Button
+                  className={`font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden`}
+                  color='#E4EEE3'
+                  label='Sign In'
+                  link='/sign-in'
+                  onClick={() => setIsOpen(false)}
+                />
+                <Button
+                  className='font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden '
+                  color='#E4EEE3'
+                  label='Sign Up'
+                  link='/sign-up'
+                  onClick={() => setIsOpen(false)}
+                />
+              </div>
+            )}
           </div>
-          <UserMenu currentUser={currentUser}/>
+
           <Link
             className={`h-[10%] w-full text-center leading-[10vh] uppercase hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
               isOpen ? "" : ""

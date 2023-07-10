@@ -31,11 +31,21 @@ module.exports = {
       slideOut: {
         '0%': {right: '0%'},
         '100%': {right: '-100%'}
+      },
+      dropdown: {
+        '0%': {transform: 'translateY(-20px)', opacity: 0},
+        '100%': {transform: 'translateY(0px)', opacity: 1}
+      },
+      goUp: {
+        '0%': {transform: 'translateY(0px)', opacity: 1},
+        '100%': {transform: 'translateY(-20px)', opacity: 0}
       }
     },
     animation: {
       slideIn: 'slideIn ease-in-out 300ms',
-      slideOut: 'slideOut ease-in-out 300ms'
+      slideOut: 'slideOut ease-in-out 300ms',
+      dropdown: 'dropdown ease-in-out 300ms',
+      goUp: 'goUp ease-in-out 300ms'
     }
   },
   plugins: [
