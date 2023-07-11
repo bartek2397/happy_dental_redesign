@@ -20,6 +20,33 @@ model User {
   hashedPassword String?
 
   accounts Account[]
+  orders Order[]
+  products Product[]
+}
+
+
+model Order {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  productId String @db.ObjectId
+  amount Int
+  currency String
+  status String
+  createdDate DateTime @default(now())
+
+  products Product @relation(fields: [productId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+}
+model Product {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  name String
+  description String
+  imageSrc String
+  price Int
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders Order[]
 }
 
 model Account {
