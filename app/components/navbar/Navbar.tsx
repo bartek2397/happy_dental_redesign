@@ -117,6 +117,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         </div>
         <Menu />
         <div className='hidden lg:flex flex-col'>
+          {currentUser ? (
+            <UserMenu currentUser={currentUser} />
+          ) : (
           <div className='flex gap-20 items-center mx-8 mt-2 text-white '>
             <p className='hover:underline'>
               <Link href='/sign-in'>Sign in</Link>
@@ -125,7 +128,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
               <Link href='/sign-up'>Sign Up</Link>
             </p>
           </div>
-          <div className='my-10 lg:flex justify-between gap-8 hidden absolute right-0 h-[40%]'>
+          )}
+          <div className=' lg:flex justify-between gap-4 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
             <NavInput type='text' icon={FiShoppingCart} value='0.00' disabled />
           </div>

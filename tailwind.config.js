@@ -45,7 +45,7 @@ module.exports = {
       slideIn: 'slideIn ease-in-out 300ms',
       slideOut: 'slideOut ease-in-out 300ms',
       dropdown: 'dropdown ease-in-out 300ms',
-      goUp: 'goUp ease-in-out 300ms'
+      goUp: 'goUp ease-in 300ms'
     }
   },
   plugins: [
