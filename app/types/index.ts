@@ -8,8 +8,12 @@ export type SafeUser = Omit<User, 'createdAt' | 'updatedAt' | 'emailVerified'> &
     emailVerified: string| null
 }
 
-export type SafeProduct = Omit<Product, 'name'> & {
+export type ProductType = {
+    id: string
     name: string;
+    description: string;
+    imageSrc: string;
+    price: number;
 }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {

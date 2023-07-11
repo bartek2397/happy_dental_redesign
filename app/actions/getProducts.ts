@@ -12,7 +12,11 @@ export default async function getProducts() {
 
         const safeProducts = products.map((product) => ({
             ...products,
-            name: product.name.toString()
+            id: product.id.toString(),
+            name: product.name.toString(),
+            description: product.description.toString(),
+            imageSrc: product.imageSrc.toString(),
+            price: product.price.valueOf
         }))
 
         return safeProducts;
