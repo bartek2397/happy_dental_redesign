@@ -9,7 +9,7 @@ export type SafeUser = Omit<User, 'createdAt' | 'updatedAt' | 'emailVerified'> &
 }
 
 export type ProductType = {
-    id: string
+    id: string;
     name: string;
     description: string;
     imageSrc: string;

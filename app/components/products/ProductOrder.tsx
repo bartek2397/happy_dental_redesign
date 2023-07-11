@@ -1,10 +1,21 @@
 'use client'
 
 import React from 'react'
+import { ProductType } from '@/app/types'
+import Button from '../Button'
 
-const ProductOrder = () => {
+type ProductOrder = Omit<ProductType, 'id' | 'name' | 'description' | 'imageSrc'>
+
+const ProductOrder = ({ price }: ProductOrder) => {
   return (
-    <div>ProductOrder</div>
+    <div>
+      <div className='flex'>
+        <div>
+          {price}
+        </div>
+          <Button label='Buy Now' className='uppercase'/>
+      </div>
+    </div>
   )
 }
 

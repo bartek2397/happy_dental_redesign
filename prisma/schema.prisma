@@ -21,7 +21,6 @@ model User {
 
   accounts        Account[]
   orders          Order[]
-  products        Product[]
 }
 
 
@@ -40,13 +39,11 @@ model Order {
 
 model Product {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
-  userId      String @db.ObjectId
   name        String
   description String
   imageSrc    String
   price       String
 
-  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
   orders      Order[]
 }
 

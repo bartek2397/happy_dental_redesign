@@ -1,17 +1,16 @@
 'use client'
 
-import getProducts from '@/app/actions/getProducts';
 import { SafeOrder, ProductType } from '@/app/types'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import ProductHead from './ProductHead';
 import Link from 'next/link';
+import ProductOrder from './ProductOrder';
 
 
 const ProductCard = async ({ id, name, description, imageSrc, price }: ProductType) => {
 
-    const products = await getProducts()
 
     const router = useRouter()
   return (
@@ -20,10 +19,10 @@ const ProductCard = async ({ id, name, description, imageSrc, price }: ProductTy
             pathname: `/product/${id}`,
             query: { name, id, description },
         }}>
-            <div className='flex'>
+            <div className='flex justify-between'>
                 <Image src={imageSrc} width={302} height={302} alt='Bamboo Toothbrush' />
                 <ProductHead title='Bamboo Toothbrushes' subtitle='Bundle of three brushes, many colors to choose from' />
-                {/* ProductOrder */}
+                <ProductOrder price={price} />
             </div>
         </Link>
     </div>
