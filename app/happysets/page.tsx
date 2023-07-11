@@ -36,6 +36,7 @@ const Happysets = () => {
             <li>Dla dzieci</li>
           </ul>
         </div>
+
       </div>
     </main>
   );

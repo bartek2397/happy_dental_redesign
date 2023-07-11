@@ -11,46 +11,47 @@ datasource db {
 }
 
 model User {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  name    String?
-  email   String?   @unique
-  emailVerified DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  hashedPassword String?
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String?
+  email           String?   @unique
+  emailVerified   DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  hashedPassword  String?
 
-  accounts Account[]
-  orders Order[]
-  products Product[]
+  accounts        Account[]
+  orders          Order[]
+  products        Product[]
 }
 
 
 model Order {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @db.ObjectId
-  productId String @db.ObjectId
-  amount Int
-  currency String
-  status String
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String @db.ObjectId
+  productId   String @db.ObjectId
+  amount      Int
+  currency    String
+  status      String
   createdDate DateTime @default(now())
 
-  products Product @relation(fields: [productId], references: [id])
-  user User @relation(fields: [userId], references: [id])
+  products    Product @relation(fields: [productId], references: [id])
+  user        User @relation(fields: [userId], references: [id])
 }
-model Product {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @db.ObjectId
-  name String
-  description String
-  imageSrc String
-  price Int
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  orders Order[]
+model Product {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String @db.ObjectId
+  name        String
+  description String
+  imageSrc    String
+  price       Float
+
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders      Order[]
 }
 
 model Account {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
   userId             String   @db.ObjectId
   type               String
   provider           String
@@ -63,7 +64,7 @@ model Account {
   id_token           String?  @db.String
   session_state      String?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user               User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
