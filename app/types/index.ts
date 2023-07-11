@@ -13,7 +13,7 @@ export type ProductType = {
     name: string;
     description: string;
     imageSrc: string;
-    price: number;
+    price: string;
 }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {

@@ -44,7 +44,7 @@ model Product {
   name        String
   description String
   imageSrc    String
-  price       Float
+  price       String
 
   user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
   orders      Order[]

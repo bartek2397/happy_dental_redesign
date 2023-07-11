@@ -6,9 +6,11 @@ import Heading from '../components/Heading';
 import { SafeOrder, ProductType, SafeUser } from '../types';
 import ProductCard from '../components/products/ProductCard';
 
-import brush1 from '../../images/superkitina-rCT928GIboM-unsplash.jpg'
+interface HappyClientProps {
+  children: React.ReactNode
+}
 
-const HappyClient = async () => {
+const HappyClient: React.FC<HappyClientProps> = ({ children }) => {
 
   const breadcrumbs = [
     <Link key='1' color='inherit' href='/'>
@@ -41,7 +43,7 @@ const HappyClient = async () => {
             </ul>
           </div>
           <div>
-            
+            {children}
           </div>
         </div>
       </main>
