@@ -13,6 +13,7 @@ import Button from "../Button";
 import NavInput from "../inputs/NavInput";
 import { SafeUser } from "@/app/types";
 import UserMenu from "./UserMenu";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -94,18 +95,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     return isOpen ? Menu : null;
   };
 
+  const router = useRouter()
+
   return (
     <div className='w-full bg-background h-[14vh] '>
       <nav className='max-w-[1440px] m-auto h-full flex justify-between relative '>
-        <Link href='/'>
           <Image
             src={logo}
             alt='Logo'
             fill
             sizes="(max-width: 1023px) 40%, 25%"
             className="object-contain max-w-[40%] lg:max-w-[25%]"
+            onClick={() => router.push('/')}
           />
-        </Link>
         <div className='block lg:hidden fixed right-5 top-[4%] z-50'>
           <Hamburger
             toggled={isOpen}

@@ -31,13 +31,13 @@ const ProductCard: React.FC<ProductCardProps> = async ({
           width={302}
           height={302}
           alt={data.name}
-          className="py-4 w-[302px] h-[302px]"
+          className="py-4 w-auto h-auto"
         />
-        <Heading title={data.name} subtitle={data.description} center />
+        <Heading title={data.name} subtitle={data.description} center className="font-semibold"/>
         <div className='w-full flex justify-between py-4'>
           <div>{data.price}</div>
           <div>
-            <Button label='Buy Now' className='uppercase py-4' color="#E4EEE3" />
+            <Button label='Buy Now' className='uppercase p-4 drop-shadow-sm' color="#E4EEE3" />
           </div>
         </div>
       </div>
