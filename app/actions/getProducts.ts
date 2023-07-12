@@ -3,10 +3,11 @@ import prisma from '@/prisma/prismadb'
 export default async function getProducts() {
     try {
         const products = await prisma.product.findMany({
+            take: 4,
+            
             orderBy: {
-                name: 'desc'
+                name: 'asc'
             },
-            take: 4
         })
 
         const safeProducts = products.map((product) => ({

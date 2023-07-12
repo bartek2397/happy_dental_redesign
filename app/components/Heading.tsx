@@ -4,12 +4,13 @@ interface HeadingProps {
     title: string;
     subtitle?: string;
     center?: boolean
+    className?: string;
 }
 
-const Heading: React.FC<HeadingProps> = ({ title, subtitle, center}) => {
+const Heading: React.FC<HeadingProps> = ({ title, subtitle, center, className }) => {
   return (
-    <div>
-      <div className={`${center ? 'text-center' : ''} uppercase`}>
+    <div className={`${className && ''}`}>
+      <div className={`${center ? 'text-center' : ''} uppercase font-semibold`}>
         {title}
       </div>
       <div className="font-light mt-2">

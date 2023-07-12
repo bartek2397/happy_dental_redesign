@@ -22,7 +22,7 @@ const HappyClient: React.FC<HappyClientProps> = ({ children }) => {
       </Typography>,
     ];
     return (
-      <main className='max-w-full h-screen px-4'>
+      <main className='max-w-full px-4'>
         <div className='max-w-[1440px] m-auto'>
           <div className="py-6">
             <Stack>
@@ -42,9 +42,7 @@ const HappyClient: React.FC<HappyClientProps> = ({ children }) => {
               <li>Dla dzieci</li>
             </ul>
           </div>
-          <div>
-            {children}
-          </div>
+          {children}
         </div>
       </main>
   )
