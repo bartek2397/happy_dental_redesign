@@ -3,7 +3,7 @@ import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Navbar from "../components/navbar/Navbar";
-import background from "../../images/unsplash_WFsNCIn8OF4.webp";
+import background from "../../public/images/unsplash_WFsNCIn8OF4.webp";
 import Image from "next/image";
 
 const HomePage = () => {

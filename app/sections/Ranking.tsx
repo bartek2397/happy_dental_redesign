@@ -5,8 +5,8 @@ import Card from "../components/Card";
 
 import Image from "next/image";
 
-import toothbrushes from '../../images/Toothbrushes.png'
-import woman from '../../images/Woman.png'
+import toothbrushes from '../../public/images/Toothbrushes.png'
+import woman from '../../public/images/Woman.png'
 
 const Ranking = () => {
   return (

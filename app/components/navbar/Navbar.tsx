@@ -4,7 +4,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { SlMagnifier } from "react-icons/sl";
 
 import Image from "next/image";
-import logo from "../../../images/logo.png";
+import logo from "../../../public/images/logo.png";
 
 import { Spin as Hamburger } from "hamburger-react";
 import React, { useState } from "react";

@@ -5,7 +5,7 @@ import Heading from "../components/Heading";
 
 import Image from "next/image";
 
-import smile from "../../images/smile.png";
+import smile from "../../public/images/smile.png";
 import Button from "../components/Button";
 
 const Blog = () => {
