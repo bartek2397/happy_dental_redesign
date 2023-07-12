@@ -14,9 +14,9 @@ const Happysets = async () => {
     return (
       <main className='max-w-full h-screen px-4'>
         <HappyClient>
-        {products.map((product) => (
+        {/* {products.map((product) => (
               <ProductCard key={product.id} id={product.id} name={product.name} description={product.description} imageSrc={product.imageSrc} price={product.price} />
-            ))}
+            ))} */}
         </HappyClient>
       </main>
   )

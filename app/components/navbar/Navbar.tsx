@@ -102,7 +102,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             src={logo}
             alt='Logo'
             fill
-            className='object-contain max-w-[40%] lg:max-w-[25%]'
+            sizes="(max-width: 1023px) 40%, 25%"
+            className="object-contain max-w-[40%] lg:max-w-[25%]"
           />
         </Link>
         <div className='block lg:hidden fixed right-5 top-[4%] z-50'>
