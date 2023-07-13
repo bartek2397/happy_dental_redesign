@@ -3,7 +3,8 @@ const nextConfig = {
     images: {
         domains: [
             'images.unsplash.com',
-            'res.cloudinary.com'
+            'res.cloudinary.com',
+            'lh3.googleusercontent.com'
         ],
         remotePatterns: [
             {
