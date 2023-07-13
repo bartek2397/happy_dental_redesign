@@ -27,16 +27,16 @@ const HappyClient = () => {
               </Breadcrumbs>
             </Stack>
           </div>
-          <div className="font-heading font-bold text-2xl">
-            <Heading title='Happyset' />
-          </div>
-          <div>
-            <ul className="flex justify-between py-6 text-[#909B93] uppercase">
-              <li>Dla niej</li>
-              <li>Dla niego</li>
-              <li>Okazje</li>
-              <li>Dla dzieci</li>
-            </ul>
+          <div className='flex flex-col lg:items-center lg:flex-row lg:gap-12'>
+            <div className="font-heading font-bold text-2xl">
+              <Heading title='Happyset' />
+            </div>
+              <ul className="flex gap-16 lg:gap-36 py-6 text-[#909B93] uppercase">
+                <li>Dla niej</li>
+                <li>Dla niego</li>
+                <li>Okazje</li>
+                <li>Dla dzieci</li>
+              </ul>
           </div>
         </div>
       </main>

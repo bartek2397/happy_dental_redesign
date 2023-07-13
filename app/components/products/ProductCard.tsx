@@ -22,23 +22,27 @@ const ProductCard: React.FC<ProductCardProps> = async ({
   const router = useRouter();
 
   return (
-    <div className="max-w-[1440px] m-auto py-4">
-      <div className='flex flex-col lg:flex-row items-center justify-between px-4'>
+    <div className='max-w-[1440px] m-auto py-4'>
+      <div className='flex flex-col md:flex-row items-center justify-between px-4'>
         <Image
           src={data.imageSrc}
           width={302}
           height={302}
           alt={data.name}
-          className=""
+          className=''
           priority
         />
-        <div className="font-semibold">
-          <Heading title={data.name} subtitle={data.description} center />
+        <div className='font-semibold text-lg px-8 overflow-hidden'>
+          <Heading title={data.name} subtitle={data.description} />
         </div>
-        <div className='w-full flex gap-4 justify-end items-center py-4'>
-          <div className="font-heading text-[#909B93]">{data.price} zł</div>
+        <div className='w-full flex gap-4 justify-end items-center self-end py-4'>
+          <div className='font-heading text-[#909B93]'>{data.price} zł</div>
           <div>
-            <Button label='Buy Now' className='uppercase p-4 drop-shadow-sm' color="#E4EEE3" />
+            <Button
+              label='Buy Now'
+              className='uppercase p-4 drop-shadow-sm'
+              color='#E4EEE3'
+            />
           </div>
         </div>
       </div>
