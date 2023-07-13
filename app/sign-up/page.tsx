@@ -9,6 +9,7 @@ import { BsGoogle } from 'react-icons/bs'
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 
 
@@ -47,7 +48,7 @@ const SignUp = () => {
             <FormInput id="email" type='email' placeholder="Email" errors={errors} register={register} required/>
             <FormInput id="password" type='password' placeholder="Password" errors={errors} register={register} required />
             <FormInput id="confirmPassword" type='password' placeholder='Confirm Password' errors={errors} register={register} required/>
-            <Button label="Sign up with Google" icon={BsGoogle} color="#fff" className="py-2 hover:bg-[#f4f4f4] transition" />
+            <Button onClick={() => signIn('google')} label="Sign up with Google" icon={BsGoogle} color="#fff" className="py-2 hover:bg-[#f4f4f4] transition" />
             <Button onClick={handleSubmit(onSubmit)} label="Submit" color="#C5D8DF" className="py-4 hover:bg-[#fff] transition" />
           </form>
         </div>

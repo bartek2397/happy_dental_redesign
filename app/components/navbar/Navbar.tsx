@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
   const router = useRouter()
 
   return (
-    <div className='w-full bg-background h-[14vh] '>
+    <div className='w-full bg-background h-[14vh] px-4'>
       <nav className='max-w-[1440px] m-auto h-full flex justify-between relative '>
           <Image
             src={logo}
@@ -120,24 +120,24 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           />
         </div>
         <Menu />
-        <div className='hidden lg:flex flex-col'>
+        <div className='hidden lg:flex flex-col absolute right-0'>
           {currentUser ? (
             <UserMenu currentUser={currentUser} />
           ) : (
-          <div className='flex gap-20 items-center mx-8 mt-2 text-white '>
-            <p className='hover:underline'>
+          <div className='flex gap-16 items-center mx-6 mt-2 text-white '>
+            <p className='hover:underline cursor-pointer'>
               <Link href='/sign-in'>Sign in</Link>
             </p>
-            <p className='hover:underline'>
+            <p className='hover:underline cursor-pointer'>
               <Link href='/sign-up'>Sign Up</Link>
             </p>
           </div>
           )}
-          <div className=' lg:flex justify-between gap-4 hidden absolute top-10 right-0 h-[40%]'>
+        </div>
+          <div className=' lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
             <NavInput type='text' icon={FiShoppingCart} value='0.00' disabled />
           </div>
-        </div>
       </nav>
     </div>
   );
