@@ -6,11 +6,7 @@ import Heading from '../components/Heading';
 import { SafeOrder, ProductType, SafeUser } from '../types';
 import ProductCard from '../components/products/ProductCard';
 
-interface HappyClientProps {
-  children: React.ReactNode
-}
-
-const HappyClient: React.FC<HappyClientProps> = ({ children }) => {
+const HappyClient = () => {
 
   const breadcrumbs = [
     <Link key='1' color='inherit' href='/'>
@@ -42,7 +38,6 @@ const HappyClient: React.FC<HappyClientProps> = ({ children }) => {
               <li>Dla dzieci</li>
             </ul>
           </div>
-          {children}
         </div>
       </main>
   )

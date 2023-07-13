@@ -6,6 +6,7 @@ import HappyClient from "./HappyClient";
 import getProducts from "../actions/getProducts";
 import ProductCard from "../components/products/ProductCard";
 import getCurrentUser from "../actions/getCurrentUser";
+import ClientOnly from "../components/ClientOnly";
 
 const Happysets = async () => {
 
@@ -13,13 +14,12 @@ const Happysets = async () => {
   const currentUser = await getCurrentUser()
   
     return (
-      <main className='max-w-full px-4'>
-        <HappyClient>
-          {products.map((product) => (
-                <ProductCard key={product.id} currentUser={currentUser} data={product} />
-              ))}
-        </HappyClient>
-      </main>
+      <div>
+          <HappyClient />
+            {products.map((product) => (
+                  <ProductCard key={product.id} currentUser={currentUser} data={product} />
+                ))}
+      </div>
   )
 };
 

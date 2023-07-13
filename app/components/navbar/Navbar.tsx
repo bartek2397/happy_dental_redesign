@@ -107,6 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             sizes="(max-width: 1023px) 40%, 25%"
             className="object-contain max-w-[40%] lg:max-w-[25%]"
             onClick={() => router.push('/')}
+            priority
           />
         <div className='block lg:hidden fixed right-5 top-[4%] z-50'>
           <Hamburger
