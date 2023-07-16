@@ -21,7 +21,7 @@ const NavInput: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, v
         {Icon && (
             <Icon 
                 size={24}
-                className="absolute right-4 top-3"
+                className="absolute right-4 top-[50%] -translate-y-[50%]"
                 color="#fff"
             />
         )}
