@@ -10,6 +10,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import { useEffect } from "react";
 
 const SignUp = () => {
   const router = useRouter();
@@ -37,6 +38,22 @@ const SignUp = () => {
         toast.error(error);
       });
   };
+
+  function handleCallbackResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+  }
+
+  useEffect(() => {
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: process.env.GOOGLE_ID,
+      callback: handleCallbackResponse,
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementsByClassName("g_id_signin")
+    );
+  });
   return (
     <div className='max-w-full h-[75vh] px-4'>
       <div className='max-w-[1440px] h-[75%] mx-auto text-center relative'>
@@ -66,13 +83,24 @@ const SignUp = () => {
               register={register}
               required
             />
-            <Button
-              onClick={() => signIn("google")}
-              label='Sign up with Google'
-              icon={BsGoogle}
-              color='#fff'
-              className='py-2 hover:bg-[#f4f4f4] transition'
-            />
+          <div
+            id='g_id_onload'
+            data-client_id='671664924838-ki9ar78a75n1ct71hlnjodqot5m6tlcr.apps.googleusercontent.com'
+            data-context='signin'
+            data-ux_mode='redirect'
+            data-login_uri='http://localhost:3000/api/auth/callback/google'
+            data-nonce=''
+            data-auto_prompt='false'
+          ></div>
+          <div
+            className='g_id_signin'
+            data-type='standard'
+            data-shape='pill'
+            data-theme='filled_black'
+            data-text='signin_with'
+            data-size='large'
+            data-logo_alignment='left'
+          ></div>
             <Button
               onClick={handleSubmit(onSubmit)}
               label='Submit'

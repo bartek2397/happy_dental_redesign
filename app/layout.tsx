@@ -21,6 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
       <body className={raleway.className}>
         <ToasterProvider />
         <Navbar currentUser={currentUser} />
