@@ -13,7 +13,6 @@ import { signIn } from "next-auth/react";
 
 const SignUp = () => {
   const router = useRouter();
-
   const {
     register,
     handleSubmit,
@@ -66,13 +65,23 @@ const SignUp = () => {
               register={register}
               required
             />
-            <Button
-              onClick={() => signIn("google")}
-              label='Sign up with Google'
-              icon={BsGoogle}
-              color='#fff'
-              className='py-2 hover:bg-[#f4f4f4] transition'
-            />
+            <div
+              id='g_id_onload'
+              data-client_id='671664924838-ki9ar78a75n1ct71hlnjodqot5m6tlcr.apps.googleusercontent.com'
+              data-context='signin'
+              data-ux_mode='popup'
+              data-login_uri='http://localhost:3000/google'
+              data-auto_prompt='false'></div>
+
+            <div
+              className='g_id_signin'
+              data-type='standard'
+              data-shape='pill'
+              data-theme='filled_black'
+              data-text='continue_with'
+              data-size='large'
+              data-locale='en-US'
+              data-logo_alignment='left'></div>
             <Button
               onClick={handleSubmit(onSubmit)}
               label='Submit'

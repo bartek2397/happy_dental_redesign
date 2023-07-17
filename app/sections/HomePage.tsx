@@ -13,7 +13,7 @@ const HomePage = () => {
           <Image
             src={background}
             alt="Background"
-            className="absolute bottom-[0%] right-[50%] translate-x-[50%] w-[80%] "
+            className="absolute bottom-[0%] right-[50%] translate-x-[50%] w-[80%] max-h-[90vh] "
           />
 
         <div className="max-w-[1332px] flex flex-col lg:flex-row gap-4 xl:gap-64 justify-center items-center pt-[3%] ">
