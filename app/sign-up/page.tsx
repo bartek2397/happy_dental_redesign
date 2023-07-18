@@ -10,6 +10,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import { useEffect } from "react";
+import Google from "next-auth/providers/google";
 
 const SignUp = () => {
   const router = useRouter();
@@ -36,6 +38,23 @@ const SignUp = () => {
         toast.error(error);
       });
   };
+
+  function handleCallbackResponse(response) {
+    console.log("Encoded JWT ID token: " + response)
+  }
+
+  useEffect(() => {
+    /*global google*/
+    google.accounts.id.initialize({
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      callback: handleCallbackResponse,
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById('signInDiv'),
+      { theme: 'outline', size: 'large'}
+    )
+  }, [])
   return (
     <div className='max-w-full h-[75vh] px-4'>
       <div className='max-w-[1440px] h-[75%] mx-auto text-center relative'>
