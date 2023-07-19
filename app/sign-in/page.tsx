@@ -58,7 +58,7 @@ const SignIn = () => {
               register={register}
               required
             />
-            <div
+            {/* <div
               id='g_id_onload'
               data-client_id='671664924838-ki9ar78a75n1ct71hlnjodqot5m6tlcr.apps.googleusercontent.com'
               data-context='signin'
@@ -74,7 +74,7 @@ const SignIn = () => {
               data-text='continue_with'
               data-size='large'
               data-locale='en-US'
-              data-logo_alignment='left'></div>
+              data-logo_alignment='left'></div> */}
             <Button
               onClick={handleSubmit(onSubmit)}
               label='Submit'
