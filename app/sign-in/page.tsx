@@ -31,6 +31,7 @@ const SignIn = () => {
       if (callback?.ok) {
         toast.success("Logged in!");
         router.push("/");
+        router.refresh()
       }
       if (callback?.error) {
         toast.error(callback.error);
