@@ -14,6 +14,7 @@ import NavInput from "../inputs/NavInput";
 import { SafeUser } from "@/app/types";
 import UserMenu from "./UserMenu";
 import { useRouter } from "next/navigation";
+import MenuItem from "./MenuItem";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -54,38 +55,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             )}
           </div>
 
-          <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase max-lg:hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
-              isOpen ? "" : ""
-            } `}
-            href='/'
-            onClick={() => setIsOpen(false)}>
-            Bestsellers
-          </Link>
-          <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
-              isOpen ? "" : ""
-            } `}
-            href='/'
-            onClick={() => setIsOpen(false)}>
-            New
-          </Link>
-          <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
-              isOpen ? "" : ""
-            } `}
-            href='/happysets'
-            onClick={() => setIsOpen(false)}>
-            Happysets
-          </Link>
-          <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
-              isOpen ? "" : ""
-            } `}
-            href='/'
-            onClick={() => setIsOpen(false)}>
-            Sales
-          </Link>
+          <MenuItem label='bestsellers' onClick={() => setIsOpen(false)}/>
+          <MenuItem label='new' onClick={() => setIsOpen(false)}/>
+          <MenuItem label='happysets' onClick={() => setIsOpen(false)}/>
+          <MenuItem label='sale' onClick={() => setIsOpen(false)}/>
         </ul>
       </>
     );

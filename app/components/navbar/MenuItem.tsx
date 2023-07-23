@@ -1,25 +1,22 @@
 "use client";
 
+import Link from "next/link";
+
 interface MenuItemProps {
   onClick: () => void;
   label: string;
+  className?: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ onClick, label }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ onClick, label, className }) => {
   return (
     <div
       onClick={onClick}
-      className='
-    px-4 
-    py-3 
-    hover:bg-neutral-100 
-    lg:hover:bg-neutral-400
-    transition
-    font-semibold
-    rounded-lg
-  '
+      className={`h-[10%] w-full text-center leading-[10vh] uppercase max-lg:hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
+        className ?? ""
+      }`}
     >
-      {label}
+      <Link href={`/${label}`}>{label}</Link>
     </div>
   );
 };

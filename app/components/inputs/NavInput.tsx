@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react";
 import { IconType } from "react-icons";
 
 interface InputProps {
@@ -7,9 +8,12 @@ interface InputProps {
     icon?: IconType,
     disabled?: boolean
     value?: string;
+    focused?: boolean;
 }
 
-const NavInput: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, value }) => {
+const NavInput: React.FC<InputProps> = ({ type = 'text', icon: Icon, disabled, value, focused }) => {
+
+  const [isFocused, setIsFocused] = useState(false)
   return (
     <div className="w-[107px] h-full relative text-white bg-transparent border-solid border rounded-full">
       <input
