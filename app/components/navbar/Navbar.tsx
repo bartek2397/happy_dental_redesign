@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           </div>
 
           <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase max-lg:hover:bg-[#C5D8DF] transition hover:drop-shadow-md lg:text-white ${
               isOpen ? "" : ""
             } `}
             href='/'
@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             Bestsellers
           </Link>
           <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/'
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             New
           </Link>
           <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/happysets'
@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             Happysets
           </Link>
           <Link
-            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition hover:bg-[#C5D8DF] hover:drop-shadow-md ${
+            className={`h-[10%] w-full text-center leading-[10vh] uppercase lg:text-white transition max-lg:hover:bg-[#C5D8DF] hover:drop-shadow-md ${
               isOpen ? "" : ""
             } `}
             href='/'

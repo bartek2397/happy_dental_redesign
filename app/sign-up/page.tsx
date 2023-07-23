@@ -14,7 +14,6 @@ import { useEffect } from "react";
 
 const SignUp = () => {
   const router = useRouter();
-
   const {
     register,
     handleSubmit,
