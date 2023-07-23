@@ -27,6 +27,7 @@ export default async function RootLayout({
         <Navbar currentUser={currentUser} />
         {children}
         <Footer />
+      {/* <script src="https://accounts.google.com/gsi/client" async></script> */}
       </body>
     </html>
   );

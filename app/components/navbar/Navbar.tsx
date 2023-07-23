@@ -31,11 +31,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
               ? "w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-sm rounded-md flex-col right-0 items-center animate-slideIn"
               : "absolute w-[50vw] h-[100vh] flex bg-[#e4eee3ba] backdrop-blur-lg rounded-md flex-col right-[-100%] items-center animate-slideOut lg:w-[40%] lg:h-[14vh] lg:flex-row lg:uppercase  lg:right-[50%] lg:-top-10 lg:translate-x-[50%] lg:bg-transparent"
           }`}>
-          <div className={`${isOpen ? 'py-24' : 'py-24'} lg:hidden`}>
+          <div className={`w-[80%] py-24 lg:hidden`}>
             {currentUser ? (
               <UserMenu currentUser={currentUser} />
             ) : (
-              <div>
+              <div className="text-center">
                 <Button
                   className={`font-normal px-8 py-2 text-sm hover:bg-[#C5D8DF] transition lg:hidden`}
                   color='#E4EEE3'
