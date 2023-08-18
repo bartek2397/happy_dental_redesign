@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = async ({
   const router = useRouter();
 
   return (
-    <div className='max-w-[1440px] m-auto py-8'>
+    <div onClick={() => router.push(`/product/${data.id}`)} className='max-w-[1440px] m-auto py-8'>
       <div className='flex flex-col lg:flex-row items-center gap-20 justify-between px-4'>
         <Image
           src={data.imageSrc}
