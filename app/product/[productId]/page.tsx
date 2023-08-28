@@ -1,6 +1,7 @@
 import getProductById from "@/app/actions/getProductById";
 import EmptyState from "@/app/components/EmptyState";
 import ProductClient from "./ProductClient";
+import { ProductType } from "@/app/types";
 
 interface IParams {
     productId: string;
@@ -17,7 +18,7 @@ const ProductPage = async ({ params }: { params: IParams }) => {
     }
   return (
     <div>
-        <ProductClient />
+        <ProductClient product={product} />
     </div>
   )
 }
