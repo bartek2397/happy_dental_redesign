@@ -16,6 +16,7 @@ export type ProductType = {
     price: string;
     code: string;
     weight: string;
+    available: boolean
 }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {

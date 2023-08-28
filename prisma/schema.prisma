@@ -46,6 +46,7 @@ model Product {
   code          String?
   weight        String?
   manufacturer  String?
+  available     Boolean?
 
   orders      Order[]
 }
