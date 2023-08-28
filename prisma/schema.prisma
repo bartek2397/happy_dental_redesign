@@ -38,11 +38,14 @@ model Order {
 }
 
 model Product {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  description String
-  imageSrc    String
-  price       String
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  description   String
+  imageSrc      String?
+  price         String
+  code          String?
+  weight        String?
+  manufacturer  String?
 
   orders      Order[]
 }

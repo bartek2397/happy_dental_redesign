@@ -23,9 +23,12 @@ export default async function getProductById(params: IParams) {
             ...product,
             id: product.id.toString(),
             name: product.name.toString(),
-            description: product.description.toString(),
-            imageSrc: product.imageSrc.toString(),
-            price: product.price.toString()
+            description: product.description?.toString(),
+            imageSrc: product.imageSrc?.toString(),
+            price: product.price.toString(),
+            code: product.code?.toString(),
+            weight: product.weight?.toString(),
+            manufacturer: product.manufacturer?.toString()
         }
     } catch (error: any) {
         throw new Error(error)

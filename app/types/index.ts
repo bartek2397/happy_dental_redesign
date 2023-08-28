@@ -14,6 +14,8 @@ export type ProductType = {
     description: string;
     imageSrc: string;
     price: string;
+    code: string;
+    weight: string;
 }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {
