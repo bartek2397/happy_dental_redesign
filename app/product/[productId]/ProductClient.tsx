@@ -19,11 +19,10 @@ const ProductClient: React.FC<ProductClientProps> = ({
   currentUser,
 }) => {
 
-  const productAvailability = product.available ? 'This product is available' : 'This product is not available';
-  const availabilityIcon = product.available ? <BsCheckLg /> : <AiOutlineClose />
+  const availabilityIcon = product.available ? <BsCheckLg size={32} color="#38a84a" /> : <AiOutlineClose size={32} color="#bf0d0d" />
   return (
     <div className='max-w-[1280px] m-auto py-16 px-4'>
-      <div className='flex justify-around'>
+      <div className='flex flex-col items-center justify-between gap-4 md:flex-row basis-1/6'>
         <Image
           src={product.imageSrc}
           alt='Image'
@@ -31,17 +30,18 @@ const ProductClient: React.FC<ProductClientProps> = ({
           width={302}
           height={302}
         />
-        <div className='w-[50%] relative'>
+        <div className='md:w-[50%] relative basis-6/12'>
             <ProductHead title={product.name} />
-            <ProductInfo code={product.code} weight={product.weight} available={productAvailability} icon={availabilityIcon} />
-          <div className='flex gap-8 absolute bottom-10'>
-            <label className="leading-[35.2px]" htmlFor="itemsNumber">Ilość:</label>
+            <ProductInfo code={product.code} weight={product.weight} available={availabilityIcon} price={product.price} />
+
+          <div className='flex gap-10 absolute '>
+            <label className="leading-[35.2px]" htmlFor="itemsNumber">Quantity:</label>
             <input className="w-[20%]" type='number' placeholder='0' id="itemsNumber" />
             <Button label='Add to Cart' className="bg-[#E4EEE3] p-2 text-[0.8rem]" />
           </div>
         </div>
       </div>
-      <div className='py-10 text-[1.2rem]'>
+      <div className='pt-20 md:py-10 text-[1.2rem] text-center md:text-justify'>
         <p>{product.description}</p>
       </div>
     </div>
