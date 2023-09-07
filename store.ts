@@ -1,29 +1,56 @@
-import { createStore } from 'zustand'
-import { createContext } from "react";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { AddCartType } from "./app/types/AddCartType";
 
-interface PriceProps {
-    value: number
-}
+type CartState = {
+  isOpen: boolean;
+  cart: AddCartType[];
+  toggleCart: () => void;
+  clearCart: () => void;
+  addProduct: (item: AddCartType) => void;
+  removeProduct: (item: AddCartType) => void;
+};
 
-interface PriceState extends PriceProps {
-    addValue: () => void
-}
-
-type PriceStore = ReturnType<typeof createPriceStore>
-
-const createPriceStore = (initProps?: Partial<PriceProps>) => {
-    const DEFAULT_PROPS: PriceProps = {
-        value: 0,
-    }
-    return createStore<PriceState>()((set) => ({
-        ...DEFAULT_PROPS,
-        ...initProps,
-        addValue: () => set((state) => ({ value: ++state.value}))
-    }))
-}
-
-export const PriceContext = createContext<PriceStore | null>(null)
-
-
-
-
+export const useCartStore = create<CartState>()(
+  persist((set) => ({
+    cart: [],
+    isOpen: false,
+    toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
+    addProduct: (item) =>
+      set((state) => {
+        const existingItem = state.cart.find(
+          (cartItem) => cartItem.id === item.id
+        )
+        if (existingItem) {
+            const updatedCart = state.cart.map((cartItem) => {
+                if (cartItem.id === item.id) {
+                    return { ...cartItem, quantity: cartItem.quantity! + 1}
+                }
+                return cartItem
+            })
+            return {cart: updatedCart}
+        } else {
+            return { cart: [...state.cart, { ...item, quantity: 1}]}
+        }
+      }),
+      removeProduct: (item) =>
+      set((state) => {
+        const existingItem = state.cart.find((cartItem) => cartItem.id === item.id)
+        if (existingItem && existingItem.quantity! > 1) {
+            const updatedCart = state.cart.map((cartItem) => {
+                if (cartItem.id === item.id) {
+                    return { ...cartItem, quantity: cartItem.quantity! - 1 }
+                }
+                return cartItem
+            })
+            return {cart: updatedCart}
+        } else {
+            const filteredCart = state.cart.filter((cartItem) => cartItem.id !== item.id)
+            return { cart: filteredCart}
+        }
+      }),
+      clearCart: () => set((state) => ({ cart: []}))
+  }),
+  { name: 'cart-store'}
+  )
+);

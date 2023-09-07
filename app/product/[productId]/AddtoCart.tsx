@@ -1,8 +1,7 @@
 'use client'
 
 import Button from "@/app/components/Button"
-import { useState, useRef } from 'react'
-import { PriceContext } from "@/store"
+import { useState} from 'react'
 
 import React from 'react'
 
@@ -21,7 +20,7 @@ const AddtoCart: React.FC<AddToCardProps> = ({ disabled }) => {
   }
   return (
     <>
-      <Button label={added ? 'Adding to Card' : 'Buy Now'} disabled={disabled} onClick={handleAddToCart} className="bg-[#E4EEE3] p-2 text-[0.8rem]" />
+      <Button label={added ? 'Adding to Card' : 'Buy Now'} disabled={added} onClick={handleAddToCart} className="bg-[#E4EEE3] p-2 text-[0.8rem]" />
     </>
   )
 }

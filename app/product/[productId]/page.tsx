@@ -18,7 +18,7 @@ const ProductPage = async ({ params }: { params: IParams }) => {
     }
   return (
     <div>
-        <ProductClient product={product} />
+        <ProductClient  />
     </div>
   )
 }
