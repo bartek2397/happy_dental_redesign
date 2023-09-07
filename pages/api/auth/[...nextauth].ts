@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import type { AuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
+import { Provider } from 'next-auth/providers';
 
 const prisma = new PrismaClient()
 
@@ -56,13 +57,14 @@ export const authOptions: AuthOptions = {
                 return user
             }
         })
-    ],
+    ] as Provider[],
     pages: {
         signIn: '/',
       },
       debug: process.env.NODE_ENV === 'development',
       session: {
         strategy: "jwt",
+        maxAge: 30 * 24 * 60 * 60
       },
       secret: process.env.NEXTAUTH_SECRET,
 }
