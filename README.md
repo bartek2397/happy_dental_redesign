@@ -1,8 +1,8 @@
-## HappyDental Redesign Project
+# HappyDental Redesign Project
 
 Basic e-commerce website with oral hygiene products. 
 
-# Technologies I'm working with:
+## Technologies I'm working with:
 
 - ReactJS with Typescript
 - NextJS
