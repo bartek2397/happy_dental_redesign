@@ -11,7 +11,7 @@ Basic e-commerce website with oral hygiene products.
 - MongoDB
 - NextAuth
 
-Designed by [Małgorzata Święty-Wszołek](www.linkedin.com/in/gosiaswietywszolek/).
+Designed by [Małgorzata Święty-Wszołek](<www.linkedin.com/in/gosiaswietywszolek/>).
 
 This project is made only for portfolio purposes.
 
