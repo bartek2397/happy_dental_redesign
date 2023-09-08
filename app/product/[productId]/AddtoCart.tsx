@@ -1,18 +1,18 @@
 'use client'
 
 import Button from "@/app/components/Button"
-import { useState} from 'react'
+import { useState } from 'react'
+import { useCartStore } from "@/store"
+import { AddCartType } from "@/app/types/AddCartType"
 
 import React from 'react'
 
-interface AddToCardProps {
-  disabled: boolean
-}
-
-const AddtoCart: React.FC<AddToCardProps> = ({ disabled }) => {
+const AddtoCart = ({ id, name, price, quantity, imageSrc }: AddCartType) => {
   const [added, setAdded] = useState<boolean>(false)
+  const cartStore = useCartStore()
 
   const handleAddToCart = () => {
+    cartStore.addProduct({ id, name, price, quantity, imageSrc })
     setAdded(true)
     setTimeout(() => {
       setAdded(false)
