@@ -1,17 +1,13 @@
-import getProductById from "@/app/actions/getProductById";
-import EmptyState from "@/app/components/EmptyState";
-import ProductClient from "./ProductClient";
 import { ProductType } from "@/app/types";
+
 import Image from "next/image";
 import ProductHead from "@/app/components/products/ProductHead";
 import ProductInfo from "@/app/components/products/ProductInfo";
-import Button from "@/app/components/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
-
-interface IParams {
-    productId: string;
-}
+import getProductById from "@/app/actions/getProductById";
+import EmptyState from "@/app/components/EmptyState";
+import Button from "@/app/components/Button";
 
 const ProductPage = async ({ params }: { params: IParams }) => {
 

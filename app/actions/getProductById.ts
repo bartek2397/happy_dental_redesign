@@ -18,7 +18,7 @@ export default async function getProductById(params: IParams) {
         if (!product) {
             return null
         }
-
+        
         return {
             ...product,
             id: product.id.toString(),

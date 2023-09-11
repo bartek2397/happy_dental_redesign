@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         </div>
           <div className=' lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
-            <NavInput type='text' icon={FiShoppingCart} value='0.00' disabled />
+            <Button label='0' color="transparent"  className="h-full w-full relative text-white bg-transparent border-solid border rounded-full"/>
           </div>
       </nav>
     </div>
