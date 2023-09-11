@@ -16,8 +16,11 @@ export default async function getProducts() {
             id: product.id.toString(),
             name: product.name.toString(),
             description: product.description.toString(),
-            imageSrc: product.imageSrc.toString(),
-            price: product.price.toString()
+            imageSrc: product.imageSrc?.toString(),
+            price: product.price.toString(),
+            code: product.code?.toString(),
+            weight: product.weight?.toString(),
+            manufacturer: product.manufacturer?.toString(),
         }))
 
         return safeProducts;

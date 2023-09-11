@@ -12,11 +12,12 @@ export type ProductType = {
     id: string;
     name: string;
     description: string;
-    imageSrc: string;
+    imageSrc?: string | undefined;
     price: string;
-    code: string;
-    weight: string;
-    available: boolean
+    code?: string;
+    weight?: string;
+    available?: boolean;
+    manufacturer?: string;
 }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {

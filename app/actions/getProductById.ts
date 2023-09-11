@@ -18,7 +18,7 @@ export default async function getProductById(params: IParams) {
         if (!product) {
             return null
         }
-
+        
         return {
             ...product,
             id: product.id.toString(),
@@ -28,7 +28,8 @@ export default async function getProductById(params: IParams) {
             price: product.price.toString(),
             code: product.code?.toString(),
             weight: product.weight?.toString(),
-            manufacturer: product.manufacturer?.toString()
+            manufacturer: product.manufacturer?.toString(),
+            available: product.available?.valueOf()
         }
     } catch (error: any) {
         throw new Error(error)
