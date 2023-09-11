@@ -97,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           {currentUser ? (
             <UserMenu currentUser={currentUser} />
           ) : (
-          <div className='flex gap-16 items-center mx-6 mt-2 text-white '>
+          <div className='flex gap-24 items-center px-6 mt-2 text-white '>
             <p className='hover:underline cursor-pointer'>
               <Link href='/sign-in'>Sign in</Link>
             </p>
@@ -107,9 +107,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           </div>
           )}
         </div>
-          <div className=' lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
+          <div className='lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
-            <Button label='0' color="transparent"  className="h-full w-full relative text-white bg-transparent border-solid border rounded-full"/>
+            <Button label='0' color="transparent" icon={FiShoppingCart}  className="w-[50%] h-full text-white  bg-transparent border-solid border font-normal"/>
           </div>
       </nav>
     </div>

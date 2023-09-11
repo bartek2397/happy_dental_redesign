@@ -9,6 +9,10 @@ import getProductById from "@/app/actions/getProductById";
 import EmptyState from "@/app/components/EmptyState";
 import Button from "@/app/components/Button";
 
+interface IParams {
+  productId: string;
+}
+
 const ProductPage = async ({ params }: { params: IParams }) => {
 
     const product = await getProductById(params)
