@@ -24,11 +24,12 @@ export default async function getProductById(params: IParams) {
             id: product.id.toString(),
             name: product.name.toString(),
             description: product.description?.toString(),
-            imageSrc: product.imageSrc?.toString(),
+            imageSrc: product.imageSrc.toString(),
             price: product.price.toString(),
             code: product.code?.toString(),
             weight: product.weight?.toString(),
-            manufacturer: product.manufacturer?.toString()
+            manufacturer: product.manufacturer?.toString(),
+            available: product.available?.valueOf()
         }
     } catch (error: any) {
         throw new Error(error)
