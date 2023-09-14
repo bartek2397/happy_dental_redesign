@@ -9,10 +9,12 @@ type CartState = {
   clearCart: () => void;
   addProduct: (item: AddCartType) => void;
   removeProduct: (item: AddCartType) => void;
+  updateCartValue: () => number;
 };
 
 export const useCartStore = create<CartState>()(
-  persist((set) => ({
+  persist((set, get) => ({
+    cartValue: '0',
     cart: [],
     isOpen: false,
     toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
@@ -49,7 +51,14 @@ export const useCartStore = create<CartState>()(
             return { cart: filteredCart}
         }
       }),
-      clearCart: () => set((state) => ({ cart: []}))
+      clearCart: () => set((state) => ({ cart: []})),
+      updateCartValue: () => {
+        const { cart } = get();
+        if (cart.length) {
+          return cart.map(item => item.price).reduce((prev, curr) => prev + curr)
+        }
+        return 0
+      } 
   }),
   { name: 'cart-store'}
   )

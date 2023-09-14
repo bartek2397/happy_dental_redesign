@@ -15,12 +15,15 @@ import { SafeUser } from "@/app/types";
 import UserMenu from "./UserMenu";
 import { useRouter } from "next/navigation";
 import MenuItem from "./MenuItem";
+import { useCartStore } from "@/store";
+import CartButton from "../CartButton";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
+  const { updateCartValue } = useCartStore()
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const Menu = () => {
@@ -109,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         </div>
           <div className='lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
-            <Button label='0' color="transparent" icon={FiShoppingCart}  className="w-[50%] h-full text-white  bg-transparent border-solid border font-normal"/>
+            <CartButton icon={FiShoppingCart}  link="/cart" label={updateCartValue()}/>
           </div>
       </nav>
     </div>

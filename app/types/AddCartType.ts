@@ -3,5 +3,5 @@ export type AddCartType = {
     imageSrc: string
     id: string
     quantity?: number | 1
-    price: string
+    price: number
   }
