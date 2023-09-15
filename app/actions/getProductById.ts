@@ -1,7 +1,7 @@
 import prisma from '@/prisma/prismadb'
 
 interface IParams {
-    productId: string;
+    productId?: string;
 }
 
 export default async function getProductById(params: IParams) {
@@ -23,7 +23,7 @@ export default async function getProductById(params: IParams) {
             ...product,
             id: product.id.toString(),
             name: product.name.toString(),
-            description: product.description?.toString(),
+            description: product.description.toString(),
             imageSrc: product.imageSrc.toString(),
             price: product.price.toString(),
             code: product.code?.toString(),

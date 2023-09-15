@@ -1,7 +1,5 @@
 import { Order, Product, User } from "@prisma/client";
 
-export type SafeNumber = number | `${number}`;
-
 export type SafeUser = Omit<User, 'createdAt' | 'updatedAt' | 'emailVerified'> & {
     createdAt: string;
     updatedAt: string;
@@ -12,8 +10,8 @@ export type ProductType = {
     id: string;
     name: string;
     description: string;
-    imageSrc?: string | undefined;
-    price: number;
+    imageSrc: string | undefined;
+    price: string;
     code?: string;
     weight?: string;
     available?: boolean;

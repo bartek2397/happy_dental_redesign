@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         </div>
           <div className='lg:flex justify-between gap-2 hidden absolute top-10 right-0 h-[40%]'>
             <NavInput type='text' icon={SlMagnifier} />
-            <CartButton icon={FiShoppingCart}  link="/cart" label={updateCartValue()}/>
+            <CartButton icon={FiShoppingCart}  link="/cart" label={updateCartValue()} onClick={() => console.log()}/>
           </div>
       </nav>
     </div>
