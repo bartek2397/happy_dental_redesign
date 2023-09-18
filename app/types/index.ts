@@ -7,16 +7,13 @@ export type SafeUser = Omit<User, 'createdAt' | 'updatedAt' | 'emailVerified'> &
 }
 
 export type ProductType = {
-    id: string;
-    name: string;
-    description: string;
-    imageSrc: string | undefined;
-    price: string;
-    code?: string;
-    weight?: string;
-    available?: boolean;
-    manufacturer?: string;
-}
+    name: string
+    unit_amount: number | null
+    quantity?: number | 1
+    image: string
+    id: string
+    description: string | null
+  }
 
 export type SafeOrder = Omit<Order, 'createdDate' > & {
     createdDate: string
