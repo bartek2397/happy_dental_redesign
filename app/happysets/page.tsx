@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs, Stack, Typography } from "@mui/material";
 import Heading from "../components/Heading";
 import HappyClient from "./HappyClient";
-import getProducts from "../actions/getProducts";
+import getProducts from "../../utils/getProducts";
 import ProductCard from "../components/products/ProductCard";
 import getCurrentUser from "../actions/getCurrentUser";
 import ClientOnly from "../components/ClientOnly";
